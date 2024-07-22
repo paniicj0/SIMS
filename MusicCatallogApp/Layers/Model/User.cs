@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using MusicCatallogApp.Layers.ModelEnum;
 
 namespace MusicCatallogApp.Layers.Model
 {
@@ -18,8 +19,9 @@ namespace MusicCatallogApp.Layers.Model
         private bool showReviews;
         private bool showConcact;
         private bool blocked;
+        private UserTypeEnum userType;
 
-        public User(int id,string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked)
+        public User(int id,string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum  userType)
         {
             this.id = id;
             this.name = name;
@@ -30,6 +32,7 @@ namespace MusicCatallogApp.Layers.Model
             this.showReviews = showReviews;
             this.showConcact = showConcact;
             this.blocked = blocked;
+            this.userType = userType;
         }
 
         public int getId() { return id; }   
@@ -41,6 +44,8 @@ namespace MusicCatallogApp.Layers.Model
         public bool ShowReviews { get { return showReviews; } } 
         public bool ShowConcact { get { return showConcact; } }
         public bool Blocked { get { return blocked; } }
+
+        public UserTypeEnum UserType { get { return userType; } }
 
         public string StringToJson()
         {
@@ -54,7 +59,8 @@ namespace MusicCatallogApp.Layers.Model
                 favourites = this.favourites,
                 showReviews = this.showReviews,
                 showConcact = this.showConcact,
-                blocked = this.blocked
+                blocked = this.blocked,
+                userTypeEnum = this.userType,
             };
 
             return JsonConvert.SerializeObject(userObject, Formatting.Indented);
