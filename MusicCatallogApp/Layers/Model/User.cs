@@ -19,9 +19,9 @@ namespace MusicCatallogApp.Layers.Model
         private bool showReviews;
         private bool showConcact;
         private bool blocked;
-        private UserTypeEnum userType;
+        private UserTypeEnum.UserType userType;
 
-        public User(int id,string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum  userType)
+        public User(int id,string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType  userType)
         {
             this.id = id;
             this.name = name;
@@ -35,17 +35,49 @@ namespace MusicCatallogApp.Layers.Model
             this.userType = userType;
         }
 
-        public int getId() { return id; }   
-        public string Name { get { return name; } }
-        public string Surname { get {   return surname; } }
-        public string Email { get { return email; } }
-        public string Password { get { return password; } }   
-        public List<string> Favourites { get { return favourites; } }
-        public bool ShowReviews { get { return showReviews; } } 
-        public bool ShowConcact { get { return showConcact; } }
-        public bool Blocked { get { return blocked; } }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
-        public UserTypeEnum UserType { get { return userType; } }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string Surname
+        {
+            get { return surname; }
+            set { surname = value; }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+        public List<string> Favourites { 
+            get { return favourites; }  
+            set { favourites = value; } 
+        }
+        public bool ShowReviews { 
+            get { return showReviews; }
+            set { showReviews = value; } } 
+        public bool ShowConcact {
+            get { return showConcact; } 
+            set { ShowConcact = value; } }
+        public bool Blocked { 
+            get { return blocked; }
+            set { blocked = value; } }
+
+        public UserTypeEnum.UserType UserType {
+            get { return userType; }
+            set { userType = value; } }
 
         public string StringToJson()
         {
