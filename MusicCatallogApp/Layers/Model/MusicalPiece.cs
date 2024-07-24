@@ -24,10 +24,24 @@ namespace MusicCatallogApp.Layers.Model
             this.participants = participants;
         }
 
-        public string Text { get; set; }
-        public string Picture { get; set; }
-        public DateOnly CreationDate { get; set; }
-        public List<Preformer> Participants { get; set; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string Text { 
+            get { return text; } set { text = value; }
+        }
+        public string Picture { 
+            get { return picture; } set {   picture = value; }
+        }
+        public DateOnly CreationDate { 
+            get { return creationDate; } set { creationDate = value; }
+        }
+        public List<Preformer> Participants { 
+            get { return participants; } set { participants = value; }
+        }
 
         public string StringToJson()
         {

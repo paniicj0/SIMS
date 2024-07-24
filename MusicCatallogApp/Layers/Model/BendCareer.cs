@@ -27,13 +27,35 @@ namespace MusicCatallogApp.Layers.Model
             this.concert = concert;
         }
 
-        public int Id { get; set; }
-        public List<string> Links { get; set; }
-        public List<string> Participants { get; set; }
-        public string Picture { get; set; }
-        public string Biography { get; set; }
-        public string BendRelease { get; set; }
-        public string Concert { get; set; }
+        public int Id {
+            get {  return id; }
+            set { id = value; }
+        }
+        public List<string> Links { 
+            get { return links; }
+            set { links = value; }
+        }
+        public List<string> Participants {
+            get { return participants; }
+            set{participants = value; }
+        }
+        public string Picture { 
+            get { return picture; }
+            set { picture = value; }
+        }
+        public string Biography { 
+            get { return biography; }
+            set { biography = value; }
+        }
+        public string BendRelease
+        {
+            get { return bendRelase; }
+            set { bendRelase = value; }
+        }
+        public string Concert { 
+            get { return concert; }
+            set { concert = value; }
+        }
 
         public String StringToJson()
         {

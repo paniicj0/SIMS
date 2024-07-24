@@ -12,19 +12,31 @@ namespace MusicCatallogApp.Layers.Model
     {
         private int id;
         private string name;
-        private AlbumTypeEnum albumType;
+        private AlbumTypeEnum.AlubmType albumType;
 
-        public Album(int id, string name, AlbumTypeEnum albumType)
+        public Album(int id, string name, AlbumTypeEnum.AlubmType albumType)
         {
             this.id = id;
             this.name = name;
             this.albumType = albumType;
         }
 
-        public int getId() { return id; }
-        public string getName() { return name; }
-        public AlbumTypeEnum getAlbumType() { return albumType; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public AlbumTypeEnum.AlubmType AlbumType
+        {
 
+            get { return albumType; }
+            set { albumType = value; }
+        }
         public string StringToJson()
         {
             var albumObject = new

@@ -79,7 +79,7 @@ namespace MusicCatallogApp.Layers.Model
             get { return userType; }
             set { userType = value; } }
 
-        public string StringToJson()
+        virtual public string StringToJson()
         {
             var userObject = new
             {
