@@ -28,12 +28,16 @@ namespace MusicCatallogApp.Layers.Model
             this.bendCareer = bendCareer;
         }
 
-        public int getId() { return id; }
-        public string Biography {  get { return biography; } }
-        public string Picture { get { return picture; } }
-        public PreformerTypeEnum.PreformerType Type { get { return type; } }
-        public bool SoloCarrer {  get { return soloCareer; } }
-        public bool BendCareer { get { return bendCareer; } }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string Biography {  get { return biography; } set { biography = value; } }
+        public string Picture { get { return picture; } set { picture = value; } }
+        public PreformerTypeEnum.PreformerType Type { get { return type; } set { type = value; } }
+        public bool SoloCarrer {  get { return soloCareer; } set { soloCareer = value; } }
+        public bool BendCareer { get { return bendCareer; } set { bendCareer = value; } }
 
         public string StringToJson()
         {

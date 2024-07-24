@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MusicCatallogApp.Layers.ModelEnum;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO.Packaging;
@@ -15,10 +16,10 @@ namespace MusicCatallogApp.Layers.Model
         private string review;
         private int grade;
         private int numOfStars;
-        private ReviewAndRaiting reviewType;
+        private ReviewTypeEnum.ReviewType reviewType;
         private bool approved;
 
-        public ReviewAndRaiting(int id,string review, int grade, int numOfStars, ReviewAndRaiting reviewType, bool approved)
+        public ReviewAndRaiting(int id,string review, int grade, int numOfStars, ReviewTypeEnum.ReviewType reviewType, bool approved)
         {
             this.id = id;
             this.review = review;
@@ -28,12 +29,12 @@ namespace MusicCatallogApp.Layers.Model
             this.approved = approved;
         }
 
-        public int getId() { return id; }
-        public string Review { get { return review; } }
-        public int Grade { get { return grade; } }
-        public bool Approved { get { return approved; } }
-        public int NumOfStars {  get { return numOfStars; } }
-        public ReviewAndRaiting ReviewType { get { return reviewType; } }
+        public int Id { get { return id; } set { id = value; } }
+        public string Review { get { return review; }  set { review = value; } }
+        public int Grade { get { return grade; } set { grade = value; } }
+        public bool Approved { get { return approved; } set { approved = value; } }
+        public int NumOfStars {  get { return numOfStars; } set { numOfStars = value; } }
+        public ReviewTypeEnum.ReviewType ReviewType { get { return reviewType; } set { reviewType = value; } }
 
         public string StringToJson()
         {

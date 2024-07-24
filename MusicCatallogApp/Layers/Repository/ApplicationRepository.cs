@@ -6,38 +6,38 @@ using System.IO;
 
 namespace MusicCatallogApp.Layers.Repository
 {
-    internal class AlbumRepository
+    internal class ApplicationRepository
     {
-        private static AlbumRepository instance = null;
-        private List<Album> albums;
-        private readonly string filePath = "../../../Layers/Data/album.json";
+        private static ApplicationRepository instance = null;
+        private List<Application> apps;
+        private readonly string filePath = "../../../Layers/Data/app.json";
 
-        private AlbumRepository()
+        private ApplicationRepository()
         {
-            albums = new List<Album>();
+            apps = new List<Application>();
         }
 
-        public static AlbumRepository getInstance()
+        public static ApplicationRepository getInstance()
         {
             if (instance == null)
             {
-                instance = new AlbumRepository();
+                instance = new ApplicationRepository();
             }
             return instance;
         }
 
-        public List<Album> getAll()
+        public List<Application> getAll()
         {
-            return new List<Album>(albums);
+            return new List<Application>(apps);
         }
 
-        public Album getById(int id)
+        public Application getById(int id)
         {
-            foreach (Album album in albums)
+            foreach (Application app in apps)
             {
-                if (album.Id == id)
+                if (app.Id== id)
                 {
-                    return album;
+                    return app;
                 }
             }
             return null;
@@ -46,44 +46,44 @@ namespace MusicCatallogApp.Layers.Repository
         public int generateId()
         {
             int maxId = 0;
-            foreach (Album album in albums)
+            foreach (Application app in apps)
             {
-                if (album.Id > maxId)
+                if (app.Id > maxId)
                 {
-                    maxId = album.Id;
+                    maxId = app.Id;
                 }
             }
             return maxId + 1;
         }
 
-        public Album add(Album album)
+        public Application add(Application app)
         {
-            album.Id = generateId();
-            albums.Add(album);
+            app.Id = generateId();
+            apps.Add(app);
             save();
-            return album;
+            return app;
         }
 
         public void delete(int id)
         {
-            Album album = getById(id);
-            if (album == null)
+            Application app = getById(id);
+            if (app == null)
             {
                 return;
             }
-            albums.Remove(album);
+            apps.Remove(app);
             save();
         }
 
-        public void update(Album album)
+        public void update(Application app)
         {
-            Album oldAlbum = getById(album.Id);
-            if (oldAlbum != null)
+            Application oldApp = getById(app.Id);
+            if (oldApp != null)
             {
-                oldAlbum.Name = album.Name;
-                oldAlbum.AlbumType = album.AlbumType;
+                oldApp.NumOfAccesses = app.NumOfAccesses;
+                oldApp.NumOfViews = app.NumOfViews;
+                save();
             }
-            save();
         }
 
         public void save()
@@ -92,9 +92,9 @@ namespace MusicCatallogApp.Layers.Repository
             {
                 using (StreamWriter file = new StreamWriter(filePath))
                 {
-                    foreach (Album album in albums)
+                    foreach (Application app in apps)
                     {
-                        file.WriteLine(album.StringToJson());
+                        file.WriteLine(app.StringToJson());
                     }
                 }
             }
@@ -104,9 +104,9 @@ namespace MusicCatallogApp.Layers.Repository
             }
         }
 
-        public List<Album> loadFromFile()
+        public List<Application> loadFromFile()
         {
-            List<Album> loadedAlbums = new List<Album>();
+            List<Application> loadedApps = new List<Application>();
 
             try
             {
@@ -117,19 +117,19 @@ namespace MusicCatallogApp.Layers.Repository
                         string line;
                         while ((line = file.ReadLine()) != null)
                         {
-                            Album album = JsonConvert.DeserializeObject<Album>(line);
-                            loadedAlbums.Add(album);
+                            Application app = JsonConvert.DeserializeObject<Application>(line);
+                            loadedApps.Add(app);
                         }
                     }
                 }
-                albums = loadedAlbums;
+                apps = loadedApps;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
             }
 
-            return loadedAlbums;
+            return loadedApps;
         }
     }
 }

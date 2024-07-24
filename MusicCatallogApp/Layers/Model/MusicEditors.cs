@@ -36,17 +36,13 @@ namespace MusicCatallogApp.Layers.Model
 
         public new string StringToJson()
         {
-            // Pozivanje StringToJson metode iz bazne klase
             string baseJson = base.StringToJson();
 
-            // Parsiranje baznog JSON stringa u objekt
             var baseObject = JsonConvert.DeserializeObject<Dictionary<string, object>>(baseJson);
 
-            // Dodavanje dodatnih svojstava iz MusicEditors klase
             baseObject["numOfInputContent"] = this.numOfInputContent;
             baseObject["tasksList"] = this.tasksList;
 
-            // Serijalizacija konačnog objekta natrag u JSON string
             return JsonConvert.SerializeObject(baseObject, Formatting.Indented);
         }
 

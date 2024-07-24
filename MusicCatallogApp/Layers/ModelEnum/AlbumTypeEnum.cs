@@ -8,7 +8,7 @@ namespace MusicCatallogApp.Layers.ModelEnum
 {
     internal class AlbumTypeEnum
     {
-        private enum AlubmType
+        public enum AlubmType
         {
             CD,youTube,soundBoard
         }

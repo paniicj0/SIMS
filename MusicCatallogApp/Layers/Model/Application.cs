@@ -7,24 +7,34 @@ using System.Threading.Tasks;
 
 namespace MusicCatallogApp.Layers.Model
 {
-    class App
+    class Application
     {
         private int id;
         private int numOfAccesses;
         private int numOfViews;
 
-        public App(int id,int numOfAccesses, int numOfViews)
+        public Application(int id,int numOfAccesses, int numOfViews)
         {
             this.id = id;
             this.numOfAccesses = numOfAccesses;
             this.numOfViews = numOfViews;
         }
 
-        public int getId() { return id; }
-        public int NumOfAccesses { get; set; }
-        public int NumOfViews { get; set; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public int NumOfAccesses { 
+            get { return numOfAccesses; }
+            set { numOfAccesses = value; }
+        }
+        public int NumOfViews { 
+            get { return numOfViews; }
+            set { numOfViews = value; }
+        }
 
-        public String StringToJson()
+        public string StringToJson()
         {
             var appObject = new
             {

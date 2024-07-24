@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicCatallogApp.Layers.Service
 {
-    internal class AppService
+    internal class ApplicationService
     {
     }
 }

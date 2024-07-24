@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using MusicCatallogApp.Layers.Model;
+using MusicCatallogApp.Layers.ModelEnum;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace MusicCatallogApp.Layers.Repository
     {
         private static UserRepository instance = null;
         private List<User> users;
-        private readonly string filePath = "../../../Layers/Data/users.json"; 
+        private readonly string filePath = "../../../Layers/Data/users.json";
 
         private UserRepository()
         {
@@ -124,12 +125,15 @@ namespace MusicCatallogApp.Layers.Repository
                         string line;
                         while ((line = file.ReadLine()) != null)
                         {
-                            User user = JsonConvert.DeserializeObject<User>(line);
+                            User user = JsonConvert.DeserializeObject<User>(line, new JsonSerializerSettings
+                            {
+                                TypeNameHandling = TypeNameHandling.Auto
+                            });
                             loadedUsers.Add(user);
                         }
                     }
                 }
-                users = loadedUsers; 
+                users = loadedUsers;
             }
             catch (Exception e)
             {
