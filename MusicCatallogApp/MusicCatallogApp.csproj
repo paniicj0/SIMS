@@ -10,10 +10,7 @@
 
   <ItemGroup>
     <Folder Include="GUI\" />
-    <Folder Include="Layers\Data\" />
     <Folder Include="Layers\Controller\" />
-    <Folder Include="Layers\Service\" />
-    <Folder Include="Layers\Repository\" />
   </ItemGroup>
 
   <ItemGroup>

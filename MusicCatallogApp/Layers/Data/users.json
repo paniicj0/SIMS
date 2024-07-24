@@ -1,0 +1,30 @@
+{
+  "id": 1,
+  "name": "John",
+  "surname": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password",
+  "favourites": [
+    "SongA",
+    "SongB"
+  ],
+  "showReviews": true,
+  "showConcact": true,
+  "blocked": false,
+  "userTypeEnum": 0
+}
+{
+  "id": 2,
+  "name": "peter",
+  "surname": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password",
+  "favourites": [
+    "SongA",
+    "SongB"
+  ],
+  "showReviews": true,
+  "showConcact": true,
+  "blocked": false,
+  "userTypeEnum": 0
+}

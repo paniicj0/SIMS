@@ -9,7 +9,7 @@ namespace MusicCatallogApp.Layers.Model
 {
     class Admin: User
     {
-        public Admin(int id, string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum userType)
+        public Admin(int id, string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType userType)
             : base(id,name, surname, email, password, favourites, showReviews, showConcact, blocked,userType)
         {}
     }
