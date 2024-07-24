@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="GUI\" />
-    <Folder Include="Layers\Controller\" />
   </ItemGroup>
 
   <ItemGroup>
