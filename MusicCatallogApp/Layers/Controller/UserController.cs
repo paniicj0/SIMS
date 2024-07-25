@@ -3,6 +3,7 @@ using MusicCatallogApp.Layers.Repository;
 using MusicCatallogApp.Layers.Service;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace MusicCatallogApp.Layers.Controller
 
         private UserService userService;
 
-        private UserController()
+        public UserController()
         {
             userService = UserService.GetInstance();
         }
@@ -49,6 +50,16 @@ namespace MusicCatallogApp.Layers.Controller
 
             return userService.LoadFromFile();
 
+        }
+
+        public User logIn(String email, String password)
+        {
+            return userService.logIn(email, password);
+        }
+
+        public string GetFilterExpression(DataTable dt, string[] searchTerms)
+        {
+            return userService.GetFilterExpression(dt, searchTerms);
         }
     }
 }

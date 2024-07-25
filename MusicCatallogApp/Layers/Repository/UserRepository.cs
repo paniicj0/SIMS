@@ -17,6 +17,7 @@ namespace MusicCatallogApp.Layers.Repository
         private UserRepository()
         {
             users = new List<User>();
+            users = loadFromFile();
         }
 
         public static UserRepository getInstance()
@@ -91,6 +92,7 @@ namespace MusicCatallogApp.Layers.Repository
                 oldUser.ShowConcact = user.ShowConcact;
                 oldUser.Blocked = user.Blocked;
                 oldUser.UserType = user.UserType;
+                save(); // Save changes after updating
             }
         }
 
@@ -98,11 +100,15 @@ namespace MusicCatallogApp.Layers.Repository
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(filePath))
+                using (StreamWriter file = new StreamWriter(filePath, false))
                 {
                     foreach (User user in users)
                     {
-                        file.WriteLine(user.StringToJson());
+                        string json = JsonConvert.SerializeObject(user, new JsonSerializerSettings
+                        {
+                            TypeNameHandling = TypeNameHandling.Auto
+                        });
+                        file.WriteLine(json);
                     }
                 }
             }

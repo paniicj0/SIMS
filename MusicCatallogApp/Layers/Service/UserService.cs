@@ -2,6 +2,7 @@
 using MusicCatallogApp.Layers.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,33 @@ namespace MusicCatallogApp.Layers.Service
 
             return userRepository.loadFromFile();
 
+        }
+
+        public User logIn(String email, String password) { 
+            foreach(User user in userRepository.getAll())
+            {
+                if(user.Email.Equals(email) && user.Password.Equals(password))
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
+
+        public string GetFilterExpression(DataTable dt, string[] searchTerms)
+        {
+            List<string> filters = new List<string>();
+
+            foreach (string term in searchTerms)
+            {
+                string termFilter = string.Join(" OR ", dt.Columns.Cast<DataColumn>()
+                                                    .Select(c => $"CONVERT([{c.ColumnName}], 'System.String') LIKE '%{term}%'"));
+                filters.Add(termFilter);
+            }
+
+            string combinedFilter = string.Join(" AND ", filters);
+
+            return combinedFilter;
         }
     }
 }
