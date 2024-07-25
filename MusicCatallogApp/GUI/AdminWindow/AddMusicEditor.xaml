@@ -1,0 +1,25 @@
+﻿<Window x:Class="MusicCatallogApp.GUI.AdminWindow.AddMusicEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCatallogApp.GUI.AdminWindow"
+        mc:Ignorable="d"
+        Title="AddMusicEditor" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lblType" Content="Preformer type:" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="cbType" HorizontalAlignment="Left" Margin="162,53,0,0" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="rbSolo" Content="Solo career" HorizontalAlignment="Left" Margin="30,97,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <RadioButton x:Name="rbBend" Content="Bend career" HorizontalAlignment="Left" Margin="30,139,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblBiography" Content="Biography:" HorizontalAlignment="Left" Margin="30,191,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock x:Name="tblBiography" HorizontalAlignment="Left" Margin="30,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="178" Width="274"/>
+        <Label x:Name="lblPicture" Content="Picture:" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        <!-- Image control for displaying the picture -->
+        <Image x:Name="imgPicture" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="332" Height="196" Stretch="Uniform"/>
+
+        <!-- Button to load picture -->
+        <Button x:Name="btnLoadPicture" Content="Load Picture" HorizontalAlignment="Left" Margin="478,54,0,0" VerticalAlignment="Top" Click="btnLoadPicture_Click" FontWeight="Bold"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="426,335,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnSubmit_Click"/>
+    </Grid>
+</Window>

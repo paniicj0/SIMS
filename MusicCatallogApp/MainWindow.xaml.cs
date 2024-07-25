@@ -1,4 +1,7 @@
-﻿using MusicCatallogApp.Layers.Model;
+﻿using MusicCatallogApp.GUI.LogInWindow;
+using MusicCatallogApp.GUI.SignInWindow;
+using MusicCatallogApp.GUI.AdminWindow;
+using MusicCatallogApp.Layers.Model;
 using MusicCatallogApp.Layers.ModelEnum;
 using MusicCatallogApp.Layers.Repository;
 using System.Text;
@@ -11,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using MusicCatallogApp.Layers.Controller;
 
 namespace MusicCatallogApp
 {
@@ -19,27 +24,47 @@ namespace MusicCatallogApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private UserController userController;
         public MainWindow()
         {
             InitializeComponent();
-            UserRepository userRepository = UserRepository.getInstance();
+            userController = new UserController();
 
-            // Dodavanje korisnika
-            var user = new User(-1, "John", "Doe", "john.doe@example.com", "password", new List<string> { "SongA", "SongB" }, true, true, false, UserTypeEnum.UserType.user);
-            var user1 = new User(-1, "peter", "Doe", "john.doe@example.com", "password", new List<string> { "SongA", "SongB" }, true, true, false, UserTypeEnum.UserType.user);
-            userRepository.add(user);
-            userRepository.add(user1);
+        }
 
-            // Spremanje korisnika u fajl
-            userRepository.save();
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
+        {
+            //LogIn logInWindow = new LogIn();
+            //logInWindow.Show();
+            AddMusicEditor am=new AddMusicEditor();
+            am.Show();
+        }
 
-            // Učitavanje korisnika iz fajla
-            List<User> users = userRepository.loadFromFile();
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            SignIn signInWindow = new SignIn();
+            signInWindow.Show();
+        }
 
-            foreach (User u in users)
+        private void tbSearchMPiece_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = tbSearchMPiece.Text;
+
+            if (dgvMPiece.ItemsSource is DataView dataView)//here is the problem
             {
-                Console.WriteLine($"{u.Id} - {u.Name} {u.Surname}");
+                DataTable dt = dataView.Table;
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    string[] searchTerms = searchText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    string filter=userController.GetFilterExpression(dt,searchTerms);
+                    dataView.RowFilter = filter;
+                }
+                else
+                {
+                    dataView.RowFilter = "";
+                }
             }
         }
+
     }
 }
