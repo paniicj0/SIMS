@@ -31,7 +31,7 @@ namespace MusicCatallogApp
             userController = new UserController();
 
         }
-
+        
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
             //LogIn logInWindow = new LogIn();

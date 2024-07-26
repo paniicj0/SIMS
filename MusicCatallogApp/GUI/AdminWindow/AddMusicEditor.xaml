@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="AddMusicEditor" Height="450" Width="800">
     <Grid>
-        <!-- Left side elements -->
         <StackPanel HorizontalAlignment="Left" Margin="30,40,0,0" Width="300">
             <Label x:Name="lblType" Content="Performer type:" FontWeight="Bold"/>
             <ComboBox x:Name="cbType" Width="200" Margin="0,10,0,0"/>
@@ -17,14 +16,11 @@
             <TextBox x:Name="tbBiography" Width="270" Height="111" Margin="0,10,0,0" TextWrapping="Wrap" AcceptsReturn="True"/>
         </StackPanel>
 
-        <!-- Right side elements -->
         <StackPanel HorizontalAlignment="Right" Margin="0,40,30,0" Width="300">
             <Label x:Name="lblPicture" Content="Picture:" FontWeight="Bold" HorizontalAlignment="Center"/>
             <Image x:Name="imgPicture" Width="250" Height="200" Stretch="Uniform" Margin="0,10,0,0" HorizontalAlignment="Center"/>
             <Button x:Name="btnLoadPicture" Content="Load Picture" FontWeight="Bold" Margin="0,20,0,0" HorizontalAlignment="Center" Click="btnLoadPicture_Click" Height="35" Width="120"/>
         </StackPanel>
-
-        <!-- Submit button aligned at the bottom center -->
         <Button x:Name="btnSubmit" Content="Submit" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="btnSubmit_Click" Height="35" Width="120"/>
     </Grid>
 </Window>
