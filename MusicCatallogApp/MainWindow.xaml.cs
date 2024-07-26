@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using MusicCatallogApp.GUI.AdminWindow;
+using MusicCatallogApp.GUI.LogInWindow;
 using MusicCatallogApp.GUI.MusicEditorWindow;
 using MusicCatallogApp.GUI.SignInWindow;
 using MusicCatallogApp.Layers.Controller;
@@ -35,8 +37,10 @@ namespace MusicCatallogApp
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            AddMusicalPiece am = new AddMusicalPiece();
-            am.Show();
+            AddPreformer mp=new AddPreformer();
+            mp.Show();
+            //LogIn am = new LogIn();
+            //am.Show();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -48,10 +52,10 @@ namespace MusicCatallogApp
         private void LoadData()
         {
             originalMusicalPieces = musicalPieceRepository.loadFromFile();
-            icMPiece.ItemsSource = originalMusicalPieces;
+            lbMPiece.ItemsSource = originalMusicalPieces;
 
             originalPreformers = preformerRepository.loadFromFile();
-            icPreformer.ItemsSource = originalPreformers;
+            lbPreformer.ItemsSource = originalPreformers;
         }
 
         private void tbSearchMPiece_TextChanged(object sender, TextChangedEventArgs e)
@@ -66,7 +70,7 @@ namespace MusicCatallogApp
                                                         p.Surname.Contains(searchText, StringComparison.OrdinalIgnoreCase)))
                     .ToList();
 
-                icMPiece.ItemsSource = filteredList;
+                lbMPiece.ItemsSource = filteredList;
             }
         }
 
@@ -82,7 +86,25 @@ namespace MusicCatallogApp
                                 p.Type.ToString().Contains(searchText, StringComparison.OrdinalIgnoreCase))
                     .ToList();
 
-                icPreformer.ItemsSource = filteredList;
+                lbPreformer.ItemsSource = filteredList;
+            }
+        }
+
+        private void lbMPiece_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbMPiece.SelectedItem is MusicalPiece selectedPiece)
+            {
+                // Handle selection logic for MusicalPiece
+                MessageBox.Show($"Selected Musical Piece: {selectedPiece.Name}");
+            }
+        }
+
+        private void lbPreformer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbPreformer.SelectedItem is Preformer selectedPreformer)
+            {
+                // Handle selection logic for Preformer
+                MessageBox.Show($"Selected Preformer: {selectedPreformer.Name} {selectedPreformer.Surname}");
             }
         }
     }

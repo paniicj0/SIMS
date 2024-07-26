@@ -54,6 +54,7 @@ namespace MusicCatallogApp.GUI.AdminWindow
                 solo, bend);
 
             preformerController.Add(newPreformer);
+            this.Close();
         }
 
         private void btnLoadPicture_Click(object sender, RoutedEventArgs e)

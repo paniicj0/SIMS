@@ -3,8 +3,48 @@
     "Id": 1,
     "Name": "jgvgh",
     "Text": "hjvg",
-    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download (1).jpeg",
     "CreationDate": "2024-07-04",
+    "Participants": [
+      {
+        "Id": 1,
+        "Name": "kjdsn",
+        "Surname": "nkjlnjk",
+        "Biography": "lnj",
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download (2).jpeg",
+        "Type": 0,
+        "SoloCareer": true,
+        "BendCareer": false,
+        "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "jvh hnbjm",
+    "Text": "vgjb",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+    "CreationDate": "2024-07-11",
+    "Participants": [
+      {
+        "Id": 1,
+        "Name": "kjdsn",
+        "Surname": "nkjlnjk",
+        "Biography": "lnj",
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download (1).jpeg",
+        "Type": 0,
+        "SoloCareer": true,
+        "BendCareer": false,
+        "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Crvenka",
+    "Text": "Ovo je jedan jako lep bend lupam gluposti",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\images.jpeg",
+    "CreationDate": "2024-07-10",
     "Participants": [
       {
         "Id": 1,
@@ -20,22 +60,22 @@
     ]
   },
   {
-    "Id": 2,
-    "Name": "jvh hnbjm",
-    "Text": "vgjb",
-    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
-    "CreationDate": "2024-07-11",
+    "Id": 4,
+    "Name": "gangsta",
+    "Text": "idk what to write",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\8b46c08d7fbfa22bbeccb657717d4b0a.jpg",
+    "CreationDate": "2024-07-05",
     "Participants": [
       {
-        "Id": 1,
-        "Name": "kjdsn",
-        "Surname": "nkjlnjk",
-        "Biography": "lnj",
-        "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
-        "Type": 0,
+        "Id": 2,
+        "Name": "sdlkn",
+        "Surname": "ldsnsd",
+        "Biography": "fssf",
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download (1).jpeg",
+        "Type": 1,
         "SoloCareer": true,
-        "BendCareer": false,
-        "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+        "BendCareer": true,
+        "DisplayInfo": "sdlkn ldsnsd singer (Solo)"
       }
     ]
   }
