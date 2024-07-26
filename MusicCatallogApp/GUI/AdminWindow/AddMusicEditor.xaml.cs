@@ -1,15 +1,12 @@
 ﻿using Microsoft.Win32;
 using MusicCatallogApp.Layers.ModelEnum;
+using System.Data;
 using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace MusicCatallogApp.GUI.AdminWindow
 {
-    /// <summary>
-    /// Interaction logic for AddMusicEditor.xaml
-    /// </summary>
     public partial class AddMusicEditor : Window
     {
         public AddMusicEditor()
@@ -31,7 +28,7 @@ namespace MusicCatallogApp.GUI.AdminWindow
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            //string cb = cbType.Text();
+            // Submit logic
         }
 
         private void FillComboBoxWithType()
