@@ -13,7 +13,7 @@ namespace MusicCatallogApp.Layers.Controller
     {
         private  PreformerService preformerService;
 
-        private PreformerController()
+        public PreformerController()
         {
             preformerService = PreformerService.GetInstance();
         }

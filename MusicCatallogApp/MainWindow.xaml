@@ -17,9 +17,82 @@
         <Button x:Name="btnRegister" Content="Sign up" Margin="0,69,0,0" VerticalAlignment="Top" Height="39" Width="127" FontWeight="Bold" Click="btnRegister_Click" Grid.ColumnSpan="3"/>
 
         <TextBox x:Name="tbSearchMPiece" Grid.Column="0" Margin="10,81,10,0" TextWrapping="Wrap" Text="Search musical piece here..." VerticalAlignment="Top" Width="207" Height="35" FontSize="14" TextChanged="tbSearchMPiece_TextChanged"/>
-        <DataGrid x:Name="dgvMPiece" Grid.Column="0" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,121,10,10"/>
 
-        <TextBox x:Name="tbSearchPreformer" Grid.Column="2" Margin="10,81,10,0" TextWrapping="Wrap" Text="Search preformer here..." VerticalAlignment="Top" Width="207" Height="35"/>
-        <DataGrid x:Name="dgvPreformer" Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,121,10,10"/>
+        <ScrollViewer Grid.Column="0" Margin="10,121,0,10">
+            <ItemsControl x:Name="icMPiece">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="5">
+                            <TextBlock>
+                                <Run Text="Id: "/>
+                                <Run Text="{Binding Id}"/>
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Type}"/>
+                            </StackPanel>
+                            <TextBlock>
+                                <Run Text="Text: "/>
+                                <Run Text="{Binding Text}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Creation date: "/>
+                                <Run Text="{Binding CreationDate}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Participants: "/>
+                                <Run Text="{Binding Participants}"/>
+                            </TextBlock>
+                            <Image Source="{Binding Picture}" Width="100" Height="100" Stretch="UniformToFill"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <TextBox x:Name="tbSearchPreformer" Grid.Column="2" Margin="10,81,10,0" TextWrapping="Wrap" Text="Search preformer here..." VerticalAlignment="Top" Width="207" Height="35" TextChanged="tbSearchPreformer_TextChanged"/>
+
+        <ScrollViewer Grid.Column="2" Margin="0,121,10,10">
+            <ItemsControl x:Name="icPreformer">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="5">
+                            <TextBlock>
+                                <Run Text="Id: "/>
+                                <Run Text="{Binding Id}"/>
+                            </TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock>
+                                    <Run Text="Name: "/>
+                                    <Run Text="{Binding Name}"/>
+                                </TextBlock>
+                                <TextBlock Text=" "/>
+                                <TextBlock>
+                                    <Run Text="Surname: "/>
+                                    <Run Text="{Binding Surname}"/>
+                                </TextBlock>
+                            </StackPanel>
+                            <TextBlock>
+                                <Run Text="Type: "/>
+                                <Run Text="{Binding Type}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Biography: "/>
+                                <Run Text="{Binding Biography}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Solo Career: "/>
+                                <Run Text="{Binding SoloCareer}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Band Career: "/>
+                                <Run Text="{Binding BendCareer}"/>
+                            </TextBlock>
+                            <Image Source="{Binding Picture}" Width="100" Height="100" Stretch="UniformToFill"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>

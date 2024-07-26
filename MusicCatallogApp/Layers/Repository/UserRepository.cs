@@ -100,21 +100,16 @@ namespace MusicCatallogApp.Layers.Repository
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(filePath, false))
+                string json = JsonConvert.SerializeObject(users, Formatting.Indented, new JsonSerializerSettings
                 {
-                    foreach (User user in users)
-                    {
-                        string json = JsonConvert.SerializeObject(user, new JsonSerializerSettings
-                        {
-                            TypeNameHandling = TypeNameHandling.Auto
-                        });
-                        file.WriteLine(json);
-                    }
-                }
+                    TypeNameHandling = TypeNameHandling.Auto
+                });
+
+                File.WriteAllText(filePath, json);
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"Error writing to file: {ex.Message}");
             }
         }
 
@@ -126,27 +121,26 @@ namespace MusicCatallogApp.Layers.Repository
             {
                 if (File.Exists(filePath))
                 {
-                    using (StreamReader file = new StreamReader(filePath))
-                    {
-                        string line;
-                        while ((line = file.ReadLine()) != null)
+                    string json = File.ReadAllText(filePath);
+
+                    loadedUsers = JsonConvert.DeserializeObject<List<User>>(json, new JsonSerializerSettings
                         {
-                            User user = JsonConvert.DeserializeObject<User>(line, new JsonSerializerSettings
-                            {
-                                TypeNameHandling = TypeNameHandling.Auto
-                            });
-                            loadedUsers.Add(user);
-                        }
-                    }
+                            TypeNameHandling = TypeNameHandling.Auto
+                        });
+                    
                 }
-                users = loadedUsers;
             }
-            catch (Exception e)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"File not found: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading from file: {ex.Message}");
             }
 
             return loadedUsers;
         }
+
     }
 }

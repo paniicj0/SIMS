@@ -11,13 +11,15 @@ namespace MusicCatallogApp.Layers.Model
     class MusicalPiece
     {
         private int id;
+        private string name;
         private string text;
         private string picture;
         private DateOnly creationDate;
         private List<Preformer> participants;
-        public MusicalPiece(int id,string text, string picture, DateOnly creationDate, List<Preformer> participants)
+        public MusicalPiece(int id,string name,string text, string picture, DateOnly creationDate, List<Preformer> participants)
         {
             this.id = id;
+            this.name = name;
             this.text = text;
             this.picture = picture;
             this.creationDate = creationDate;
@@ -28,6 +30,12 @@ namespace MusicCatallogApp.Layers.Model
         {
             get { return id; }
             set { id = value; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
         }
 
         public string Text { 
@@ -48,6 +56,7 @@ namespace MusicCatallogApp.Layers.Model
             var pieceObject = new
             {
                 id = this.id,
+                name = this.name,
                 text = this.text,
                 picture = this.picture,
                 creationDate = this.creationDate,

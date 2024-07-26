@@ -1,26 +1,35 @@
-﻿<Window x:Class="MusicCatallogApp.GUI.AdminWindow.AddMusicEditor"
+﻿<Window x:Class="MusicCatallogApp.GUI.AdminWindow.AddPreformer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicCatallogApp.GUI.AdminWindow"
         mc:Ignorable="d"
-        Title="AddMusicEditor" Height="450" Width="800">
+        Title="AddPreformer" Height="487" Width="800">
     <Grid>
         <StackPanel HorizontalAlignment="Left" Margin="30,40,0,0" Width="300">
+            <Label x:Name="lblName" Content="Name:" FontWeight="Bold"/>
+            <TextBox x:Name="tbName" Width="160" Margin="0,10,0,0"/>
+
+            <Label x:Name="lblSurname" Content="Surname:" FontWeight="Bold" Margin="0,20,0,0"/>
+            <TextBox x:Name="tbSurname" Width="160" Margin="0,10,0,0"/>
+
             <Label x:Name="lblType" Content="Performer type:" FontWeight="Bold"/>
-            <ComboBox x:Name="cbType" Width="200" Margin="0,10,0,0"/>
+            <ComboBox x:Name="cbType" Width="160" Margin="0,10,0,0"/>
+
             <CheckBox x:Name="cbSolo" Content="Solo career" FontWeight="Bold" Margin="0,20,0,0"/>
             <CheckBox x:Name="cbBend" Content="Band career" FontWeight="Bold" Margin="0,10,0,0"/>
-            <Label x:Name="lblBiography" Content="Biography:" FontWeight="Bold" Margin="0,20,0,0"/>
-            <TextBox x:Name="tbBiography" Width="270" Height="111" Margin="0,10,0,0" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+            <Label x:Name="lblBiography" Content="Biography:" FontWeight="Bold" Margin="0,10,0,0"/>
+            <TextBox x:Name="tbBiography" Width="270" Height="100" Margin="0,10,0,0" TextWrapping="Wrap" AcceptsReturn="True"/>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Right" Margin="0,40,30,0" Width="300">
             <Label x:Name="lblPicture" Content="Picture:" FontWeight="Bold" HorizontalAlignment="Center"/>
             <Image x:Name="imgPicture" Width="250" Height="200" Stretch="Uniform" Margin="0,10,0,0" HorizontalAlignment="Center"/>
-            <Button x:Name="btnLoadPicture" Content="Load Picture" FontWeight="Bold" Margin="0,20,0,0" HorizontalAlignment="Center" Click="btnLoadPicture_Click" Height="35" Width="120"/>
+            <Button x:Name="btnLoadPicture" Content="Load Picture" FontWeight="Bold" Margin="15,20,0,0" HorizontalAlignment="Center" Click="btnLoadPicture_Click" Height="35" Width="120"/>
+            <Button x:Name="btnSubmit" Content="Submit" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="98,20,0,0" Click="btnSubmit_Click" Height="35" Width="120"/>
         </StackPanel>
-        <Button x:Name="btnSubmit" Content="Submit" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="btnSubmit_Click" Height="35" Width="120"/>
+
     </Grid>
 </Window>

@@ -15,6 +15,7 @@ namespace MusicCatallogApp.Layers.Repository
         private PreformerRepository()
         {
             preformers = new List<Preformer>();
+            preformers = loadFromFile();
         }
 
         public static PreformerRepository getInstance()
@@ -80,30 +81,30 @@ namespace MusicCatallogApp.Layers.Repository
             Preformer oldPreformer = getById(preformer.Id);
             if (oldPreformer != null)
             {
+                oldPreformer.Name = preformer.Name;
+                oldPreformer.Surname = preformer.Surname;
                 oldPreformer.Biography = preformer.Biography;
                 oldPreformer.Picture = preformer.Picture;
                 oldPreformer.Type = preformer.Type;
-                oldPreformer.SoloCarrer = preformer.SoloCarrer;
+                oldPreformer.SoloCareer = preformer.SoloCareer;
                 oldPreformer.BendCareer = preformer.BendCareer;
                 save();
             }
         }
-
         public void save()
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(filePath))
+                string json = JsonConvert.SerializeObject(preformers, Formatting.Indented, new JsonSerializerSettings
                 {
-                    foreach (Preformer preformer in preformers)
-                    {
-                        file.WriteLine(preformer.StringToJson());
-                    }
-                }
+                    TypeNameHandling = TypeNameHandling.Auto
+                });
+
+                File.WriteAllText(filePath, json);
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"Error writing to file: {ex.Message}");
             }
         }
 
@@ -115,24 +116,26 @@ namespace MusicCatallogApp.Layers.Repository
             {
                 if (File.Exists(filePath))
                 {
-                    using (StreamReader file = new StreamReader(filePath))
+                    string json = File.ReadAllText(filePath);
+
+                    loadedPreformers = JsonConvert.DeserializeObject<List<Preformer>>(json, new JsonSerializerSettings
                     {
-                        string line;
-                        while ((line = file.ReadLine()) != null)
-                        {
-                            Preformer preformer = JsonConvert.DeserializeObject<Preformer>(line);
-                            loadedPreformers.Add(preformer);
-                        }
-                    }
+                        TypeNameHandling = TypeNameHandling.Auto
+                    });
                 }
-                preformers = loadedPreformers;
             }
-            catch (Exception e)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"File not found: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading from file: {ex.Message}");
             }
 
             return loadedPreformers;
         }
+
+
     }
 }

@@ -1,6 +1,86 @@
-{"Id":1,"Name":"w3few","Surname":"wef","Email":"wef","Password":"wefw","Favourites":[],"ShowReviews":true,"ShowConcact":true,"Blocked":false,"UserType":"user"}
-{"Id":2,"Name":"wfewf","Surname":"wfe","Email":"fwefq","Password":"fwefq","Favourites":[],"ShowReviews":true,"ShowConcact":false,"Blocked":false,"UserType":"user"}
-{"Id":3,"Name":"fwef","Surname":"erg","Email":"q","Password":"fw","Favourites":[],"ShowReviews":true,"ShowConcact":true,"Blocked":false,"UserType":"user"}
-{"Id":4,"Name":"w3ef","Surname":"wfr","Email":"weqf","Password":"fwef","Favourites":[],"ShowReviews":true,"ShowConcact":false,"Blocked":false,"UserType":"user"}
-{"Id":5,"Name":"sfs","Surname":"sef","Email":"qfesw","Password":"wae","Favourites":[],"ShowReviews":true,"ShowConcact":true,"Blocked":false,"UserType":"user"}
-{"Id":6,"Name":"tina","Surname":"tinic","Email":"tina@gmail.com","Password":"ekfnw","Favourites":[],"ShowReviews":true,"ShowConcact":true,"Blocked":false,"UserType":"user"}
+[
+  {
+    "Id": 1,
+    "Name": "w3few",
+    "Surname": "wef",
+    "Email": "wef",
+    "Password": "wefw",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "user"
+  },
+  {
+    "Id": 2,
+    "Name": "wfewf",
+    "Surname": "wfe",
+    "Email": "fwefq",
+    "Password": "fwefq",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": false,
+    "Blocked": false,
+    "UserType": "user"
+  },
+  {
+    "Id": 3,
+    "Name": "fwef",
+    "Surname": "erg",
+    "Email": "q",
+    "Password": "fw",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "user"
+  },
+  {
+    "Id": 4,
+    "Name": "w3ef",
+    "Surname": "wfr",
+    "Email": "weqf",
+    "Password": "fwef",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": false,
+    "Blocked": false,
+    "UserType": "user"
+  },
+  {
+    "Id": 5,
+    "Name": "sfs",
+    "Surname": "sef",
+    "Email": "qfesw",
+    "Password": "wae",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "user"
+  },
+  {
+    "Id": 6,
+    "Name": "tina",
+    "Surname": "tinic",
+    "Email": "tina@gmail.com",
+    "Password": "ekfnw",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "user"
+  },
+  {
+    "Id": 7,
+    "Name": "kaca",
+    "Surname": "katic",
+    "Email": "kaka@gmail.com",
+    "Password": "asfeg",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "user"
+  }
+]

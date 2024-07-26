@@ -15,6 +15,7 @@ namespace MusicCatallogApp.Layers.Repository
         private MusicalPieceRepository()
         {
             musicalPieces = new List<MusicalPiece>();
+            musicalPieces = loadFromFile();
         }
 
         public static MusicalPieceRepository getInstance()
@@ -80,6 +81,7 @@ namespace MusicCatallogApp.Layers.Repository
             MusicalPiece oldPiece = getById(piece.Id);
             if (oldPiece != null)
             {
+                oldPiece.Name = piece.Name;
                 oldPiece.Text = piece.Text;
                 oldPiece.Picture = piece.Picture;
                 oldPiece.CreationDate = piece.CreationDate;
@@ -92,17 +94,17 @@ namespace MusicCatallogApp.Layers.Repository
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(filePath))
+               
+                string json = JsonConvert.SerializeObject(musicalPieces,Formatting.Indented, new JsonSerializerSettings
                 {
-                    foreach (MusicalPiece piece in musicalPieces)
-                    {
-                        file.WriteLine(piece.StringToJson());
-                    }
-                }
+                    TypeNameHandling = TypeNameHandling.Auto
+                });
+                File.WriteAllText(filePath, json);
+                   
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"Error writing to file: {ex.Message}");
             }
         }
 
@@ -114,24 +116,27 @@ namespace MusicCatallogApp.Layers.Repository
             {
                 if (File.Exists(filePath))
                 {
-                    using (StreamReader file = new StreamReader(filePath))
+
+                    string json = File.ReadAllText(filePath);
+
+                    loadedPieces = JsonConvert.DeserializeObject<List<MusicalPiece>>(json, new JsonSerializerSettings
                     {
-                        string line;
-                        while ((line = file.ReadLine()) != null)
-                        {
-                            MusicalPiece piece = JsonConvert.DeserializeObject<MusicalPiece>(line);
-                            loadedPieces.Add(piece);
-                        }
-                    }
+                        TypeNameHandling = TypeNameHandling.Auto
+                    });
+                    
                 }
-                musicalPieces = loadedPieces;
             }
-            catch (Exception e)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"File not found: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading from file: {ex.Message}");
             }
 
             return loadedPieces;
         }
+
     }
 }
