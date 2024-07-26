@@ -48,22 +48,22 @@ namespace MusicCatallogApp
 
         private void tbSearchMPiece_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string searchText = tbSearchMPiece.Text;
+            //string searchText = tbSearchMPiece.Text;
 
-            if (dgvMPiece.ItemsSource is DataView dataView)//here is the problem
-            {
-                DataTable dt = dataView.Table;
-                if (!string.IsNullOrEmpty(searchText))
-                {
-                    string[] searchTerms = searchText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    string filter=userController.GetFilterExpression(dt,searchTerms);
-                    dataView.RowFilter = filter;
-                }
-                else
-                {
-                    dataView.RowFilter = "";
-                }
-            }
+            //if (dgvMPiece.ItemsSource is DataView dataView)//here is the problem
+            //{
+            //    DataTable dt = dataView.Table;
+            //    if (!string.IsNullOrEmpty(searchText))
+            //    {
+            //        string[] searchTerms = searchText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            //        string filter=userController.GetFilterExpression(dt,searchTerms);
+            //        dataView.RowFilter = filter;
+            //    }
+            //    else
+            //    {
+            //        dataView.RowFilter = "";
+            //    }
+            //}
         }
 
     }

@@ -1,17 +1,9 @@
 ﻿using Microsoft.Win32;
+using MusicCatallogApp.Layers.ModelEnum;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MusicCatallogApp.GUI.AdminWindow
 {
@@ -23,6 +15,7 @@ namespace MusicCatallogApp.GUI.AdminWindow
         public AddMusicEditor()
         {
             InitializeComponent();
+            FillComboBoxWithType();
         }
 
         private void btnLoadPicture_Click(object sender, RoutedEventArgs e)
@@ -38,7 +31,15 @@ namespace MusicCatallogApp.GUI.AdminWindow
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            //string cb = cbType.Text();
+        }
 
+        private void FillComboBoxWithType()
+        {
+            foreach (var type in Enum.GetValues(typeof(PreformerTypeEnum.PreformerType)))
+            {
+                cbType.Items.Add(type);
+            }
         }
     }
 }

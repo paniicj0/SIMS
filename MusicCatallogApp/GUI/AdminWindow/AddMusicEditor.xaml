@@ -7,19 +7,24 @@
         mc:Ignorable="d"
         Title="AddMusicEditor" Height="450" Width="800">
     <Grid>
-        <Label x:Name="lblType" Content="Preformer type:" HorizontalAlignment="Left" Margin="30,40,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <ComboBox x:Name="cbType" HorizontalAlignment="Left" Margin="162,53,0,0" VerticalAlignment="Top" Width="120"/>
-        <RadioButton x:Name="rbSolo" Content="Solo career" HorizontalAlignment="Left" Margin="30,97,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <RadioButton x:Name="rbBend" Content="Bend career" HorizontalAlignment="Left" Margin="30,139,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="lblBiography" Content="Biography:" HorizontalAlignment="Left" Margin="30,191,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBlock x:Name="tblBiography" HorizontalAlignment="Left" Margin="30,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="178" Width="274"/>
-        <Label x:Name="lblPicture" Content="Picture:" HorizontalAlignment="Center" Margin="0,53,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <!-- Left side elements -->
+        <StackPanel HorizontalAlignment="Left" Margin="30,40,0,0" Width="300">
+            <Label x:Name="lblType" Content="Performer type:" FontWeight="Bold"/>
+            <ComboBox x:Name="cbType" Width="200" Margin="0,10,0,0"/>
+            <CheckBox x:Name="cbSolo" Content="Solo career" FontWeight="Bold" Margin="0,20,0,0"/>
+            <CheckBox x:Name="cbBend" Content="Band career" FontWeight="Bold" Margin="0,10,0,0"/>
+            <Label x:Name="lblBiography" Content="Biography:" FontWeight="Bold" Margin="0,20,0,0"/>
+            <TextBox x:Name="tbBiography" Width="270" Height="111" Margin="0,10,0,0" TextWrapping="Wrap" AcceptsReturn="True"/>
+        </StackPanel>
 
-        <!-- Image control for displaying the picture -->
-        <Image x:Name="imgPicture" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="332" Height="196" Stretch="Uniform"/>
+        <!-- Right side elements -->
+        <StackPanel HorizontalAlignment="Right" Margin="0,40,30,0" Width="300">
+            <Label x:Name="lblPicture" Content="Picture:" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <Image x:Name="imgPicture" Width="250" Height="200" Stretch="Uniform" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+            <Button x:Name="btnLoadPicture" Content="Load Picture" FontWeight="Bold" Margin="0,20,0,0" HorizontalAlignment="Center" Click="btnLoadPicture_Click" Height="35" Width="120"/>
+        </StackPanel>
 
-        <!-- Button to load picture -->
-        <Button x:Name="btnLoadPicture" Content="Load Picture" HorizontalAlignment="Left" Margin="478,54,0,0" VerticalAlignment="Top" Click="btnLoadPicture_Click" FontWeight="Bold"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="426,335,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnSubmit_Click"/>
+        <!-- Submit button aligned at the bottom center -->
+        <Button x:Name="btnSubmit" Content="Submit" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30" Click="btnSubmit_Click" Height="35" Width="120"/>
     </Grid>
 </Window>
