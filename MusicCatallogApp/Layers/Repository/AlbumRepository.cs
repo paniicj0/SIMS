@@ -15,6 +15,7 @@ namespace MusicCatallogApp.Layers.Repository
         private AlbumRepository()
         {
             albums = new List<Album>();
+            albums = loadFromFile();
         }
 
         public static AlbumRepository getInstance()
@@ -90,17 +91,16 @@ namespace MusicCatallogApp.Layers.Repository
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(filePath))
+                string json = JsonConvert.SerializeObject(albums, Formatting.Indented, new JsonSerializerSettings
                 {
-                    foreach (Album album in albums)
-                    {
-                        file.WriteLine(album.StringToJson());
-                    }
-                }
+                    TypeNameHandling = TypeNameHandling.Auto
+                });
+
+                File.WriteAllText(filePath, json);
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"Error writing to file: {ex.Message}");
             }
         }
 
@@ -112,21 +112,21 @@ namespace MusicCatallogApp.Layers.Repository
             {
                 if (File.Exists(filePath))
                 {
-                    using (StreamReader file = new StreamReader(filePath))
+                    string json = File.ReadAllText(filePath);
+
+                    loadedAlbums = JsonConvert.DeserializeObject<List<Album>>(json, new JsonSerializerSettings
                     {
-                        string line;
-                        while ((line = file.ReadLine()) != null)
-                        {
-                            Album album = JsonConvert.DeserializeObject<Album>(line);
-                            loadedAlbums.Add(album);
-                        }
-                    }
+                        TypeNameHandling = TypeNameHandling.Auto
+                    });
                 }
-                albums = loadedAlbums;
             }
-            catch (Exception e)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"File not found: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading from file: {ex.Message}");
             }
 
             return loadedAlbums;

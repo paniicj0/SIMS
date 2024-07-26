@@ -15,6 +15,7 @@ namespace MusicCatallogApp.Layers.Repository
         private ReviewAndRaitingRepository()
         {
             reviewsAndRatings = new List<ReviewAndRaiting>();
+            reviewsAndRatings = loadFromFile();
         }
 
         public static ReviewAndRaitingRepository getInstance()
@@ -93,17 +94,16 @@ namespace MusicCatallogApp.Layers.Repository
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(filePath))
+                string json = JsonConvert.SerializeObject(reviewsAndRatings, Formatting.Indented, new JsonSerializerSettings
                 {
-                    foreach (ReviewAndRaiting reviewAndRating in reviewsAndRatings)
-                    {
-                        file.WriteLine(reviewAndRating.StringToJson());
-                    }
-                }
+                    TypeNameHandling = TypeNameHandling.Auto
+                });
+
+                File.WriteAllText(filePath, json);
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"Error writing to file: {ex.Message}");
             }
         }
 
@@ -115,21 +115,22 @@ namespace MusicCatallogApp.Layers.Repository
             {
                 if (File.Exists(filePath))
                 {
-                    using (StreamReader file = new StreamReader(filePath))
+                    string json = File.ReadAllText(filePath);
+
+                    loadedReviewsAndRatings = JsonConvert.DeserializeObject<List<ReviewAndRaiting>>(json, new JsonSerializerSettings
                     {
-                        string line;
-                        while ((line = file.ReadLine()) != null)
-                        {
-                            ReviewAndRaiting reviewAndRating = JsonConvert.DeserializeObject<ReviewAndRaiting>(line);
-                            loadedReviewsAndRatings.Add(reviewAndRating);
-                        }
-                    }
+                        TypeNameHandling = TypeNameHandling.Auto
+                    });
                 }
-                reviewsAndRatings = loadedReviewsAndRatings;
+
             }
-            catch (Exception e)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"File not found: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading from file: {ex.Message}");
             }
 
             return loadedReviewsAndRatings;

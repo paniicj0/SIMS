@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "Name": "jgvgh",
+    "Text": "hjvg",
+    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+    "CreationDate": "2024-07-04",
+    "Participants": [
+      {
+        "Id": 1,
+        "Name": "kjdsn",
+        "Surname": "nkjlnjk",
+        "Biography": "lnj",
+        "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+        "Type": 0,
+        "SoloCareer": true,
+        "BendCareer": false,
+        "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "jvh hnbjm",
+    "Text": "vgjb",
+    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+    "CreationDate": "2024-07-11",
+    "Participants": [
+      {
+        "Id": 1,
+        "Name": "kjdsn",
+        "Surname": "nkjlnjk",
+        "Biography": "lnj",
+        "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+        "Type": 0,
+        "SoloCareer": true,
+        "BendCareer": false,
+        "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+      }
+    ]
+  }
+]

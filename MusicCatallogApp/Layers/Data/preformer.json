@@ -1,1 +1,24 @@
-﻿
+[
+  {
+    "Id": 1,
+    "Name": "kjdsn",
+    "Surname": "nkjlnjk",
+    "Biography": "lnj",
+    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+    "Type": 0,
+    "SoloCareer": true,
+    "BendCareer": false,
+    "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+  },
+  {
+    "Id": 2,
+    "Name": "sdlkn",
+    "Surname": "ldsnsd",
+    "Biography": "fssf",
+    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_08_Pro.jpg",
+    "Type": 1,
+    "SoloCareer": true,
+    "BendCareer": true,
+    "DisplayInfo": "sdlkn ldsnsd singer (Solo)"
+  }
+]

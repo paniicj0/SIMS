@@ -15,6 +15,7 @@ namespace MusicCatallogApp.Layers.Repository
         private MusicEditorsRepository()
         {
             musicEditors = new List<MusicEditors>();
+            musicEditors=loadFromFile();
         }
 
         public static MusicEditorsRepository getInstance()
@@ -99,17 +100,16 @@ namespace MusicCatallogApp.Layers.Repository
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(filePath))
+                string json = JsonConvert.SerializeObject(musicEditors, Formatting.Indented, new JsonSerializerSettings
                 {
-                    foreach (MusicEditors editor in musicEditors)
-                    {
-                        file.WriteLine(editor.StringToJson());
-                    }
-                }
+                    TypeNameHandling = TypeNameHandling.Auto
+                });
+
+                File.WriteAllText(filePath, json);
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"Error writing to file: {ex.Message}");
             }
         }
 
@@ -121,21 +121,21 @@ namespace MusicCatallogApp.Layers.Repository
             {
                 if (File.Exists(filePath))
                 {
-                    using (StreamReader file = new StreamReader(filePath))
+                    string json = File.ReadAllText(filePath);
+                    loadedEditors = JsonConvert.DeserializeObject<List<MusicEditors>>(json, new JsonSerializerSettings
                     {
-                        string line;
-                        while ((line = file.ReadLine()) != null)
-                        {
-                            MusicEditors editor = JsonConvert.DeserializeObject<MusicEditors>(line);
-                            loadedEditors.Add(editor);
-                        }
-                    }
+                        TypeNameHandling = TypeNameHandling.Auto
+                    });
+
                 }
-                musicEditors = loadedEditors;
             }
-            catch (Exception e)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine($"File not found: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading from file: {ex.Message}");
             }
 
             return loadedEditors;

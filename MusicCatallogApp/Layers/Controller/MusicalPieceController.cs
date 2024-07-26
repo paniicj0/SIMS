@@ -13,7 +13,7 @@ namespace MusicCatallogApp.Layers.Controller
     {
         private  MusicalPieceService pieceSerice;
 
-        private MusicalPieceController()
+        public MusicalPieceController()
         {
             pieceSerice = MusicalPieceService.GetInstance();
         }
