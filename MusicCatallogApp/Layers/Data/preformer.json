@@ -4,7 +4,7 @@
     "Name": "kjdsn",
     "Surname": "nkjlnjk",
     "Biography": "lnj",
-    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download (2).jpeg",
     "Type": 0,
     "SoloCareer": true,
     "BendCareer": false,
@@ -15,10 +15,21 @@
     "Name": "sdlkn",
     "Surname": "ldsnsd",
     "Biography": "fssf",
-    "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_08_Pro.jpg",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download (1).jpeg",
     "Type": 1,
     "SoloCareer": true,
     "BendCareer": true,
     "DisplayInfo": "sdlkn ldsnsd singer (Solo)"
+  },
+  {
+    "Id": 3,
+    "Name": "Petar",
+    "Surname": "Peric",
+    "Biography": "Neki tupan",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+    "Type": 2,
+    "SoloCareer": true,
+    "BendCareer": true,
+    "DisplayInfo": "Petar Peric arranger (Solo)"
   }
 ]

@@ -5,22 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicCatallogApp"
         mc:Ignorable="d"
-        Title="Music Catallog" Height="450" Width="800">
-    <Grid>
+        Title="Music Catallog" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFDCA47C">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="321*"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="249*"/>
+            <ColumnDefinition Width="73*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnLogIn" Content="Log in" Grid.Column="1" Margin="0,29,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnLogIn_Click" Height="35" Width="127"/>
-        <Button x:Name="btnRegister" Content="Sign up" Margin="0,69,0,0" VerticalAlignment="Top" Height="39" Width="127" FontWeight="Bold" Click="btnRegister_Click" Grid.ColumnSpan="3"/>
+        <Button x:Name="btnLogIn" Content="Log in" Grid.Column="1" Margin="15,29,15,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnLogIn_Click" Height="35" Width="127" Background="#FF698474"/>
+        <Button x:Name="btnRegister" Content="Sign up" Margin="15,69,15,0" VerticalAlignment="Top" Height="39" Width="127" FontWeight="Bold" Click="btnRegister_Click" Background="#FF698474" Grid.Column="1"/>
 
-        <TextBox x:Name="tbSearchMPiece" Grid.Column="0" Margin="10,81,10,0" TextWrapping="Wrap" Text="Search musical piece here..." VerticalAlignment="Top" Width="207" Height="35" FontSize="14" TextChanged="tbSearchMPiece_TextChanged"/>
+        <Label x:Name="lblSearch" Grid.Column="0" Content="Search music piece here:" HorizontalAlignment="Left" Margin="70,51,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="tbSearchMPiece" Grid.Column="0" Margin="57,81,57,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="207" Height="35" FontSize="14" TextChanged="tbSearchMPiece_TextChanged"/>
 
         <ScrollViewer Grid.Column="0" Margin="10,121,0,10">
-            <ItemsControl x:Name="icMPiece">
-                <ItemsControl.ItemTemplate>
+            <ListBox x:Name="lbMPiece" SelectionChanged="lbMPiece_SelectionChanged" Background="#FFFCF8F3">
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical" Margin="5">
                             <TextBlock>
@@ -29,11 +31,11 @@
                             </TextBlock>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Name}" Margin="0,0,5,0"/>
-                                <TextBlock Text="{Binding Type}"/>
                             </StackPanel>
-                            <TextBlock>
-                                <Run Text="Text: "/>
-                                <Run Text="{Binding Text}"/>
+                            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis">
+                                <TextBlock.Text>
+                                    <Binding Path="Text"/>
+                                </TextBlock.Text>
                             </TextBlock>
                             <TextBlock>
                                 <Run Text="Creation date: "/>
@@ -46,15 +48,17 @@
                             <Image Source="{Binding Picture}" Width="100" Height="100" Stretch="UniformToFill"/>
                         </StackPanel>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </ScrollViewer>
 
-        <TextBox x:Name="tbSearchPreformer" Grid.Column="2" Margin="10,81,10,0" TextWrapping="Wrap" Text="Search preformer here..." VerticalAlignment="Top" Width="207" Height="35" TextChanged="tbSearchPreformer_TextChanged"/>
+        <Label x:Name="lblSearch1" Grid.Column="2" Content="Search preformer here:" HorizontalAlignment="Left" Margin="70,51,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
-        <ScrollViewer Grid.Column="2" Margin="0,121,10,10">
-            <ItemsControl x:Name="icPreformer">
-                <ItemsControl.ItemTemplate>
+        <TextBox x:Name="tbSearchPreformer" Grid.Column="2" Margin="57,81,57,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Height="35" TextChanged="tbSearchPreformer_TextChanged" Grid.ColumnSpan="2"/>
+
+        <ScrollViewer Grid.Column="2" Margin="0,121,10,10" Grid.ColumnSpan="2">
+            <ListBox x:Name="lbPreformer" SelectionChanged="lbPreformer_SelectionChanged" Background="#FFFCF8F3">
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical" Margin="5">
                             <TextBlock>
@@ -91,8 +95,12 @@
                             <Image Source="{Binding Picture}" Width="100" Height="100" Stretch="UniformToFill"/>
                         </StackPanel>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </ScrollViewer>
+        <Label Grid.Column="1" Content="GIVE" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13"/>
+        <Label Content="RAITING AND REVIEW" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13" Grid.Column="1"/>
+        <Button x:Name="btnRandR" Grid.Column="1" Content="Press" HorizontalAlignment="Center" Height="39" Width="120" Margin="0,202,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="#FF698474"/>
+        <Label Grid.Column="1" Content="*first select option" HorizontalAlignment="Left" Margin="19,241,0,0" VerticalAlignment="Top" FontSize="10" FontFamily="Papyrus" Foreground="#FFF11919"/>
     </Grid>
 </Window>
