@@ -23,13 +23,20 @@ namespace MusicCatallogApp
         private ReviewAndRaitingRepository reviewAndRaitingRepository;
         private List<MusicalPiece> originalMusicalPieces;
         private List<Preformer> originalPreformers;
+        private bool isLoggedIn = false;
 
         public MainWindow()
         {
             InitializeComponent();
             InitializeRepositories();
             userController = new UserController();
+            UpdateReviewButtonStatus();
             LoadData();
+        }
+
+        private void UpdateReviewButtonStatus()
+        {
+            btnRandR.IsEnabled = isLoggedIn;
         }
 
         private void InitializeRepositories()
@@ -42,10 +49,15 @@ namespace MusicCatallogApp
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            AddPreformer mp = new AddPreformer();
-            mp.Show();
-            // LogIn am = new LogIn();
-            // am.Show();
+            LogIn am = new LogIn();
+            am.LoggedIn += OnUserLoggedIn;
+            am.Show();
+        }
+
+        private void OnUserLoggedIn(object sender, EventArgs e)
+        {
+            isLoggedIn = true;
+            UpdateReviewButtonStatus();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
