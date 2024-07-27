@@ -1,4 +1,5 @@
-﻿using MusicCatallogApp.Layers.Model;
+﻿using MusicCatallogApp.Layers.Controller;
+using MusicCatallogApp.Layers.Model;
 using MusicCatallogApp.Layers.Repository;
 using System;
 using System.Collections.Generic;
@@ -21,20 +22,41 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
     /// </summary>
     public partial class AddRaR : Window
     {
-    //    private List<ReviewAndRaiting> reviewAndRaitings;
-    //    private ReviewAndRaitingRepository reviewAndRaitingRepository;
-        internal AddRaR(List<ReviewAndRaiting> reviews)
+        private int selectedId;
+        private ReviewAndRaitingController rarController;
+        private ReviewMappingController mappingController;
+        private List<ReviewAndRaiting> reviews;
+        internal AddRaR(List<ReviewAndRaiting> reviews, int selectedId)
         {
             InitializeComponent();
             lbReviews.ItemsSource = reviews;
-            //reviewAndRaitingRepository=ReviewAndRaitingRepository.getInstance();
-            //LoadData();
+            this.selectedId = selectedId;
+            this.reviews = reviews;
+            rarController = new ReviewAndRaitingController();
+            mappingController = new ReviewMappingController();
         }
 
-        //public void LoadData()
-        //{
-        //    reviewAndRaitings = reviewAndRaitingRepository.loadFromFile();
-        //    lbReviews.ItemsSource = reviewAndRaitings;
-        //}
+        private void btnAddReview_Click(object sender, RoutedEventArgs e)
+        {
+            CreateRaR crr=new CreateRaR(selectedId);
+            crr.ReviewAdded += CreateRaR_ReviewAdded;
+            crr.Show();
+        }
+
+        private void CreateRaR_ReviewAdded(object sender, EventArgs e)
+        {
+            LoadReviews();
+        }
+
+        private void LoadReviews()
+        {
+            var reviewMapping = mappingController.getAll().FirstOrDefault(rm => rm.ItemId == selectedId);
+            if (reviewMapping != null)
+            {
+                reviews = reviewMapping.ReviewIds.Select(id => rarController.GetById(id)).ToList();
+                lbReviews.ItemsSource = reviews;
+            }
+        }
+
     }
 }

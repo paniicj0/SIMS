@@ -1,10 +1,66 @@
-﻿[
+[
   {
     "Id": 1,
-    "Review": "Good!",
+    "Review": "Excellent performance!",
+    "Grade": 5,
+    "Approved": true,
+    "NumOfStars": 5,
+    "ReviewType": 1
+  },
+  {
+    "Id": 2,
+    "Review": "Good but could be better.",
     "Grade": 3,
+    "Approved": true,
     "NumOfStars": 4,
-    "ReviewType": "song",
-    "Approved": true
+    "ReviewType": 1
+  },
+  {
+    "Id": 3,
+    "Review": "This is good!",
+    "Grade": 4,
+    "Approved": false,
+    "NumOfStars": 4,
+    "ReviewType": 0
+  },
+  {
+    "Id": 4,
+    "Review": "i dont like this",
+    "Grade": 1,
+    "Approved": false,
+    "NumOfStars": 1,
+    "ReviewType": 0
+  },
+  {
+    "Id": 5,
+    "Review": "fine",
+    "Grade": 2,
+    "Approved": false,
+    "NumOfStars": 3,
+    "ReviewType": 0
+  },
+  {
+    "Id": 6,
+    "Review": "i like this",
+    "Grade": 4,
+    "Approved": false,
+    "NumOfStars": 5,
+    "ReviewType": 0
+  },
+  {
+    "Id": 7,
+    "Review": "i dont like this",
+    "Grade": 4,
+    "Approved": false,
+    "NumOfStars": 2,
+    "ReviewType": 1
+  },
+  {
+    "Id": 8,
+    "Review": "i like this preformer a lot",
+    "Grade": 5,
+    "Approved": false,
+    "NumOfStars": 5,
+    "ReviewType": 2
   }
 ]

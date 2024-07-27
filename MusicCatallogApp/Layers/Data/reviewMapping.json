@@ -1,7 +1,34 @@
-﻿[
+[
   {
     "Id": 1,
     "ItemId": 1,
-    "ReviewIds": [ 1 ]
+    "ReviewIds": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "Id": 2,
+    "ItemId": 2,
+    "ReviewIds": [
+      3,
+      4
+    ]
+  },
+  {
+    "Id": 3,
+    "ItemId": 3,
+    "ReviewIds": [
+      6
+    ]
+  },
+  {
+    "Id": 4,
+    "ItemId": 0,
+    "ReviewIds": [
+      7,
+      8
+    ]
   }
 ]

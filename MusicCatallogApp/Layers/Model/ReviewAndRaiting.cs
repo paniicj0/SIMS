@@ -12,12 +12,12 @@ namespace MusicCatallogApp.Layers.Model
 {
     class ReviewAndRaiting
     {
-        public int id;
-        public string review;
-        public int grade;
-        public int numOfStars;
-        public ReviewTypeEnum.ReviewType reviewType;
-        public bool approved;
+        private int id;
+        private string review;
+        private int grade;
+        private int numOfStars;
+        private ReviewTypeEnum.ReviewType reviewType;
+        private bool approved;
 
         public ReviewAndRaiting(int id,string review, int grade, int numOfStars, ReviewTypeEnum.ReviewType reviewType, bool approved)
         {
@@ -36,7 +36,7 @@ namespace MusicCatallogApp.Layers.Model
         public int NumOfStars {  get { return numOfStars; } set { numOfStars = value; } }
         public ReviewTypeEnum.ReviewType ReviewType { get { return reviewType; } set { reviewType = value; } }
 
-        public string StringToJson()
+        virtual public string StringToJson()
         {
             var reviewObject = new
             {

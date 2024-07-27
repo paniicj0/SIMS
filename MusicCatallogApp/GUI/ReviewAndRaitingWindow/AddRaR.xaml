@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:MusicCatallogApp.GUI.ReviewAndRaitingWindow"
         mc:Ignorable="d"
         Title="AddRaR" Height="450" Width="800">
-    <Grid>
-        <ListBox x:Name="lbReviews">
+    <Grid Margin="10" Background="#FFDCA47C">
+        <ListBox x:Name="lbReviews" Height="300" Margin="0,38,0,96">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -27,5 +27,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button x:Name="btnAddReview" Height="35" Width="127" Content="Add review" HorizontalAlignment="Left" Margin="319,351,0,0" VerticalAlignment="Top" Background="#FF698474" Click="btnAddReview_Click"/>
     </Grid>
 </Window>

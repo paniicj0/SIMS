@@ -13,7 +13,7 @@ namespace MusicCatallogApp.Layers.Controller
     {
         private ReviewAndRaitingService reviewService;
 
-        private ReviewAndRaitingController()
+        public ReviewAndRaitingController()
         {
             reviewService = ReviewAndRaitingService.GetInstance();
         }

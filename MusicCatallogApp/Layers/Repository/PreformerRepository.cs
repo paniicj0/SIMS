@@ -54,7 +54,7 @@ namespace MusicCatallogApp.Layers.Repository
                     maxId = preformer.Id;
                 }
             }
-            return maxId + 1;
+            return maxId + 2;
         }
 
         public Preformer add(Preformer preformer)
