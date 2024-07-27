@@ -112,15 +112,32 @@ namespace MusicCatallogApp
                 MessageBox.Show($"Selected Preformer: {selectedPreformer.Name} {selectedPreformer.Surname}");
             }
         }
-
         private void btnRandR_Click(object sender, RoutedEventArgs e)
         {
             object selectedItem = lbMPiece.SelectedItem ?? lbPreformer.SelectedItem;
             if (selectedItem != null)
             {
+                int selectedItemId;
+                if (selectedItem is MusicalPiece musicalPiece)
+                {
+                    selectedItemId = musicalPiece.Id;
+                }
+                else if (selectedItem is Preformer preformer)
+                {
+                    selectedItemId = preformer.Id;
+                }
+                else
+                {
+                    return;
+                }
+
                 List<ReviewAndRaiting> reviews = GetReviewsForSelectedItem(selectedItem);
-                AddRaR reviewsWindow = new AddRaR(reviews);
+                AddRaR reviewsWindow = new AddRaR(reviews, selectedItemId);
                 reviewsWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select an item to review.");
             }
         }
 
@@ -136,9 +153,9 @@ namespace MusicCatallogApp
                     reviews = reviewMapping.ReviewIds.Select(id => reviewAndRaitingRepository.getById(id)).ToList();
                 }
             }
-            else if (selectedItem is Preformer performer)
+            else if (selectedItem is Preformer preformer)
             {
-                var reviewMapping = reviewMappingRepository.getAll().FirstOrDefault(rm => rm.ItemId == performer.Id);
+                var reviewMapping = reviewMappingRepository.getAll().FirstOrDefault(rm => rm.ItemId == preformer.Id);
                 if (reviewMapping != null)
                 {
                     reviews = reviewMapping.ReviewIds.Select(id => reviewAndRaitingRepository.getById(id)).ToList();
@@ -147,5 +164,6 @@ namespace MusicCatallogApp
 
             return reviews;
         }
+
     }
 }

@@ -54,7 +54,7 @@ namespace MusicCatallogApp.Layers.Repository
                     maxId = piece.Id;
                 }
             }
-            return maxId + 1;
+            return maxId+2;
         }
 
         public MusicalPiece add(MusicalPiece piece)

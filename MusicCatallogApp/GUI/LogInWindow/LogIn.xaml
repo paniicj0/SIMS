@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="LogIn" Height="200" Width="245" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FFDCA47C">
+    <Grid Background="#FFDCA47C" Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
