@@ -10,7 +10,6 @@ Projekat predstavlja razvoj Muzicke aplikacije, tacnije kataloga za muziku gde s
 
 ## Opis
 
-Detaljan opis projekta. Objasnite svrhu projekta, glavne funkcionalnosti i tehnologije koje koristite.
 Projekat je predstavljen kao aplikacija MusicCatalogApp. Pri ulasku na aplikaciju posedujemo glavni Main prozor gde imamo prikazane preformere i muzicka dela.
 U zavisnosti sta pregledamo imamo mogucnost pretrage i davanje recenzije i rejtinga za zeljeno delo. Takodje postoji opcija da se korisnik uloguje i registruje.
 Registrovani korisnik ima vise prednosti nego neregistrovan, dok admin ima posebne opcije za odobravanje objavljivanja odredjenog sadrzaja tipa recenzija i sl.,
