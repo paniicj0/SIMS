@@ -1,1 +1,10 @@
-﻿
+﻿[
+  {
+    "Id": 1,
+    "Review": "Good!",
+    "Grade": 3,
+    "NumOfStars": 4,
+    "ReviewType": "song",
+    "Approved": true
+  }
+]

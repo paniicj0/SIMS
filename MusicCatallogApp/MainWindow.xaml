@@ -100,7 +100,7 @@
         </ScrollViewer>
         <Label Grid.Column="1" Content="GIVE" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13"/>
         <Label Content="RAITING AND REVIEW" HorizontalAlignment="Center" Margin="0,175,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="13" Grid.Column="1"/>
-        <Button x:Name="btnRandR" Grid.Column="1" Content="Press" HorizontalAlignment="Center" Height="39" Width="120" Margin="0,202,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="#FF698474"/>
+        <Button x:Name="btnRandR" Grid.Column="1" Content="Press" HorizontalAlignment="Center" Height="39" Width="120" Margin="0,202,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="#FF698474" Click="btnRandR_Click"/>
         <Label Grid.Column="1" Content="*first select option" HorizontalAlignment="Left" Margin="19,241,0,0" VerticalAlignment="Top" FontSize="10" FontFamily="Papyrus" Foreground="#FFF11919"/>
     </Grid>
 </Window>
