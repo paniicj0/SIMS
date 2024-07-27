@@ -65,12 +65,14 @@ namespace MusicCatallogApp.Layers.Model
             get { return favourites; }  
             set { favourites = value; } 
         }
-        public bool ShowReviews { 
+        public bool ShowReviews
+        {
             get { return showReviews; }
-            set { showReviews = value; } } 
+            set { showReviews = value; }
+        }
         public bool ShowConcact {
             get { return showConcact; } 
-            set { ShowConcact = value; } }
+            set {showConcact = value; } }
         public bool Blocked { 
             get { return blocked; }
             set { blocked = value; } }

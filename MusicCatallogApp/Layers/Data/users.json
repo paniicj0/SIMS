@@ -1,10 +1,10 @@
 [
   {
     "Id": 1,
-    "Name": "w3few",
+    "Name": "joca",
     "Surname": "wef",
-    "Email": "wef",
-    "Password": "wefw",
+    "Email": "j",
+    "Password": "j",
     "Favourites": [],
     "ShowReviews": true,
     "ShowConcact": true,
@@ -25,10 +25,10 @@
   },
   {
     "Id": 3,
-    "Name": "fwef",
-    "Surname": "erg",
-    "Email": "q",
-    "Password": "fw",
+    "Name": "admin",
+    "Surname": "admin",
+    "Email": "a",
+    "Password": "a",
     "Favourites": [],
     "ShowReviews": true,
     "ShowConcact": true,
@@ -56,7 +56,7 @@
     "Favourites": [],
     "ShowReviews": true,
     "ShowConcact": true,
-    "Blocked": false,
+    "Blocked": true,
     "UserType": "user"
   },
   {
