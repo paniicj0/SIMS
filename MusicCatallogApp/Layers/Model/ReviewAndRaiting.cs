@@ -12,12 +12,12 @@ namespace MusicCatallogApp.Layers.Model
 {
     class ReviewAndRaiting
     {
-        private int id;
-        private string review;
-        private int grade;
-        private int numOfStars;
-        private ReviewTypeEnum.ReviewType reviewType;
-        private bool approved;
+        public int id;
+        public string review;
+        public int grade;
+        public int numOfStars;
+        public ReviewTypeEnum.ReviewType reviewType;
+        public bool approved;
 
         public ReviewAndRaiting(int id,string review, int grade, int numOfStars, ReviewTypeEnum.ReviewType reviewType, bool approved)
         {

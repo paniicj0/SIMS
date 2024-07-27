@@ -10,7 +10,7 @@ namespace MusicCatallogApp.Layers.Repository
     {
         private static ReviewAndRaitingRepository instance = null;
         private List<ReviewAndRaiting> reviewsAndRatings;
-        private readonly string filePath = "../../../Layers/Data/reviewsAndRating.json";
+        private readonly string filePath = "../../../Layers/Data/reviewAndRaiting.json";
 
         private ReviewAndRaitingRepository()
         {

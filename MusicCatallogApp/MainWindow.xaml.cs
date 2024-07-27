@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using MusicCatallogApp.GUI.AdminWindow;
 using MusicCatallogApp.GUI.LogInWindow;
 using MusicCatallogApp.GUI.MusicEditorWindow;
+using MusicCatallogApp.GUI.ReviewAndRaitingWindow;
 using MusicCatallogApp.GUI.SignInWindow;
 using MusicCatallogApp.Layers.Controller;
 using MusicCatallogApp.Layers.Model;
@@ -18,6 +19,8 @@ namespace MusicCatallogApp
         private UserController userController;
         private MusicalPieceRepository musicalPieceRepository;
         private PreformerRepository preformerRepository;
+        private ReviewMappingRepository reviewMappingRepository;
+        private ReviewAndRaitingRepository reviewAndRaitingRepository;
         private List<MusicalPiece> originalMusicalPieces;
         private List<Preformer> originalPreformers;
 
@@ -33,14 +36,16 @@ namespace MusicCatallogApp
         {
             musicalPieceRepository = MusicalPieceRepository.getInstance();
             preformerRepository = PreformerRepository.getInstance();
+            reviewMappingRepository = ReviewMappingRepository.getInstance();
+            reviewAndRaitingRepository=ReviewAndRaitingRepository.getInstance();
         }
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            AddPreformer mp=new AddPreformer();
+            AddPreformer mp = new AddPreformer();
             mp.Show();
-            //LogIn am = new LogIn();
-            //am.Show();
+            // LogIn am = new LogIn();
+            // am.Show();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -106,6 +111,41 @@ namespace MusicCatallogApp
                 // Handle selection logic for Preformer
                 MessageBox.Show($"Selected Preformer: {selectedPreformer.Name} {selectedPreformer.Surname}");
             }
+        }
+
+        private void btnRandR_Click(object sender, RoutedEventArgs e)
+        {
+            object selectedItem = lbMPiece.SelectedItem ?? lbPreformer.SelectedItem;
+            if (selectedItem != null)
+            {
+                List<ReviewAndRaiting> reviews = GetReviewsForSelectedItem(selectedItem);
+                AddRaR reviewsWindow = new AddRaR(reviews);
+                reviewsWindow.Show();
+            }
+        }
+
+        private List<ReviewAndRaiting> GetReviewsForSelectedItem(object selectedItem)
+        {
+            List<ReviewAndRaiting> reviews = new List<ReviewAndRaiting>();
+
+            if (selectedItem is MusicalPiece musicalPiece)
+            {
+                var reviewMapping = reviewMappingRepository.getAll().FirstOrDefault(rm => rm.ItemId == musicalPiece.Id);
+                if (reviewMapping != null)
+                {
+                    reviews = reviewMapping.ReviewIds.Select(id => reviewAndRaitingRepository.getById(id)).ToList();
+                }
+            }
+            else if (selectedItem is Preformer performer)
+            {
+                var reviewMapping = reviewMappingRepository.getAll().FirstOrDefault(rm => rm.ItemId == performer.Id);
+                if (reviewMapping != null)
+                {
+                    reviews = reviewMapping.ReviewIds.Select(id => reviewAndRaitingRepository.getById(id)).ToList();
+                }
+            }
+
+            return reviews;
         }
     }
 }

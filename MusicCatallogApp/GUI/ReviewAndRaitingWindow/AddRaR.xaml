@@ -1,0 +1,31 @@
+﻿<Window x:Class="MusicCatallogApp.GUI.ReviewAndRaitingWindow.AddRaR"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCatallogApp.GUI.ReviewAndRaitingWindow"
+        mc:Ignorable="d"
+        Title="AddRaR" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="lbReviews">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock>
+                            <Run Text="Revew:"/>
+                            <Run Text="{Binding Review}"/>
+                        </TextBlock>
+                        <TextBlock>
+                            <Run Text="Grade:"/>
+                            <Run Text="{Binding Grade}"/>
+                        </TextBlock>
+                        <TextBlock>
+                            <Run Text="Number of stars:"/>
+                            <Run Text="{Binding NumOfStars}"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicCatallogApp.Layers.ModelEnum
 {
-    internal class ReviewTypeEnum
+    public class ReviewTypeEnum
     {
         public enum ReviewType {
             album,song,preformer
