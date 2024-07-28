@@ -13,7 +13,7 @@ namespace MusicCatallogApp.Layers.Controller
     {
         private  MusicEditorsService editorsService;
 
-        private MusicEditorsController()
+        public MusicEditorsController()
         {
             editorsService = MusicEditorsService.GetInstance();
         }

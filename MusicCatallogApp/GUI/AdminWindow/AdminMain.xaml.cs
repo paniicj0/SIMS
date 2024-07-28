@@ -33,9 +33,14 @@ namespace MusicCatallogApp.GUI.AdminWindow
 
         private void btnBlock_Click(object sender, RoutedEventArgs e)
         {
-            BlockUser blockUser = new BlockUser();
+           BlockUser blockUser = new BlockUser();
             blockUser.Show();
         }
 
+        private void btnAddMEditor_Click(object sender, RoutedEventArgs e)
+        {
+            AddMusicEditor me=new AddMusicEditor();
+            me.Show();
+        }
     }
 }

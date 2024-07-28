@@ -1,1 +1,16 @@
-﻿
+[
+  {
+    "NumOfInputContent": 0,
+    "TasksList": [],
+    "Id": 1,
+    "Name": "marko",
+    "Surname": "markovic",
+    "Email": "m@gmail.com",
+    "Password": "m",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "musicEditor"
+  }
+]
