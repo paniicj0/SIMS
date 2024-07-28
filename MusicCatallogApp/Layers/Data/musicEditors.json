@@ -1,7 +1,10 @@
 [
   {
-    "NumOfInputContent": 0,
-    "TasksList": [],
+    "NumOfInputContent": 1,
+    "TasksList": [
+      "daj recenziju preformeru sa id=3",
+      "i sa id=2"
+    ],
     "Id": 1,
     "Name": "marko",
     "Surname": "markovic",
@@ -10,6 +13,48 @@
     "Favourites": [],
     "ShowReviews": true,
     "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "musicEditor"
+  },
+  {
+    "NumOfInputContent": 0,
+    "TasksList": [],
+    "Id": 2,
+    "Name": "pero",
+    "Surname": "peric",
+    "Email": "p@gmail.com",
+    "Password": "p",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "musicEditor"
+  },
+  {
+    "NumOfInputContent": 0,
+    "TasksList": [],
+    "Id": 3,
+    "Name": "ana",
+    "Surname": "anic",
+    "Email": "ana@gmail.com",
+    "Password": "ana",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": false,
+    "Blocked": false,
+    "UserType": "musicEditor"
+  },
+  {
+    "NumOfInputContent": 0,
+    "TasksList": [],
+    "Id": 4,
+    "Name": "ljilja",
+    "Surname": "ljiljic",
+    "Email": "ljilja@gmail.com",
+    "Password": "ljilja",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": false,
     "Blocked": false,
     "UserType": "musicEditor"
   }

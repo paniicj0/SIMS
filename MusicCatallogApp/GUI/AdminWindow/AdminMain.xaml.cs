@@ -48,5 +48,11 @@ namespace MusicCatallogApp.GUI.AdminWindow
             AddBend b=new AddBend();
             b.Show();
         }
+
+        private void btnAddTask_Click(object sender, RoutedEventArgs e)
+        {
+            AddTask task=new AddTask(); 
+            task.Show();
+        }
     }
 }

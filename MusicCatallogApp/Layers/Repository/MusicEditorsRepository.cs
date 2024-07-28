@@ -85,6 +85,8 @@ namespace MusicCatallogApp.Layers.Repository
             MusicEditors oldEditor = getById(editor.Id);
             if (oldEditor != null)
             {
+                oldEditor.NumOfInputContent = editor.NumOfInputContent;
+                oldEditor.TasksList = editor.TasksList;
                 oldEditor.Name = editor.Name;
                 oldEditor.Surname = editor.Surname;
                 oldEditor.Email = editor.Email;
@@ -94,8 +96,6 @@ namespace MusicCatallogApp.Layers.Repository
                 oldEditor.ShowConcact = editor.ShowConcact;
                 oldEditor.Blocked = editor.Blocked;
                 oldEditor.UserType = editor.UserType;
-                oldEditor.NumOfInputContent = editor.NumOfInputContent;
-                oldEditor.TasksList = editor.TasksList;
                 save();
             }
         }
