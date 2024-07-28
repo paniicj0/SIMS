@@ -14,8 +14,11 @@ namespace MusicCatallogApp.Layers.Repository
 
         private MusicEditorsRepository()
         {
-            musicEditors = new List<MusicEditors>();
-            musicEditors=loadFromFile();
+            musicEditors = loadFromFile();
+            if (musicEditors == null)
+            {
+                musicEditors = new List<MusicEditors>();
+            }
         }
 
         public static MusicEditorsRepository getInstance()
@@ -47,6 +50,7 @@ namespace MusicCatallogApp.Layers.Repository
         public int generateId()
         {
             int maxId = 0;
+
             foreach (MusicEditors editor in musicEditors)
             {
                 if (editor.Id > maxId)

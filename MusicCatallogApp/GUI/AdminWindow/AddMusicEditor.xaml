@@ -1,0 +1,34 @@
+﻿<Window x:Class="MusicCatallogApp.GUI.AdminWindow.AddMusicEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCatallogApp.GUI.AdminWindow"
+        mc:Ignorable="d"
+        Title="AddMusicEditor" Height="310" Width="370" Background="#FFDCA47C" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="20" Background="#FFDCA47C">
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblName" Content="Name:" VerticalAlignment="Center" FontWeight="Bold" Width="100"/>
+            <TextBox x:Name="tbName" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblSurname" Content="Surname:" VerticalAlignment="Center" FontWeight="Bold" Width="100"/>
+            <TextBox x:Name="tbSurname" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblEmail" Content="Email:" VerticalAlignment="Center" FontWeight="Bold" Width="100"/>
+            <TextBox x:Name="tbEmail" Width="110"/>
+            <Label Content="@gmail.com"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblPassword" Content="Password:" VerticalAlignment="Center" FontWeight="Bold" Width="100"/>
+            <TextBox x:Name="tbPassword" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label x:Name="lblConcact" Content="Show contact:" VerticalAlignment="Center" FontWeight="Bold" Width="100"/>
+            <RadioButton x:Name="btnYes" Content="Yes" GroupName="ContactGroup" VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,0,0"/>
+            <RadioButton x:Name="btnNo" Content="No" GroupName="ContactGroup" VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,0,0"/>
+        </StackPanel>
+        <Button x:Name="btnConfirm" Content="Confirm" FontWeight="Bold" Height="39" Width="127" Margin="0,20,0,0" Click="btnConfirm_Click" Background="#FF698474"/>
+    </StackPanel>
+</Window>
