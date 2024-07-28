@@ -10,7 +10,7 @@ using Newtonsoft.Json.Converters;
 
 namespace MusicCatallogApp.Layers.ModelEnum
 {
-    internal class UserTypeEnum
+    public class UserTypeEnum
     {
         [JsonConverter(typeof(StringEnumConverter))]
         public enum UserType

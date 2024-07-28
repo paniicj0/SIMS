@@ -58,5 +58,17 @@ namespace MusicCatallogApp.Layers.Service
             return editorsRepository.loadFromFile();
 
         }
+
+        public MusicEditors logIn(String email, String password)
+        {
+            foreach (MusicEditors user in editorsRepository.getAll())
+            {
+                if (user.Email.Equals(email) && user.Password.Equals(password))
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
     }
 }

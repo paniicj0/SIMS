@@ -38,6 +38,6 @@
         <Label x:Name="lblBendRelease" Content="Last bend release:" HorizontalAlignment="Left" Margin="350,330,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="tbBendRelease" HorizontalAlignment="Left" Margin="350,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
 
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Right" Margin="0,380,10,0" VerticalAlignment="Top" FontWeight="Bold" Width="100" Click="btnSave_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="670,380,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="100" Click="btnSave_Click"/>
     </Grid>
 </Window>

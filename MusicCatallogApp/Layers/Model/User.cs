@@ -8,7 +8,7 @@ using MusicCatallogApp.Layers.ModelEnum;
 
 namespace MusicCatallogApp.Layers.Model
 {
-    class User
+    public class User
     {
         private int id;
         private string name;

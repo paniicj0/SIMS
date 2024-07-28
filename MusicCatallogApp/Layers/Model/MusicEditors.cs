@@ -10,7 +10,7 @@ using System.Transactions;
 
 namespace MusicCatallogApp.Layers.Model
 {
-    class MusicEditors:User
+    public class MusicEditors:User
     {
         private int numOfInputContent;
         private List<string> tasksList;

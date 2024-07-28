@@ -1,4 +1,5 @@
-﻿using MusicCatallogApp.Layers.Controller;
+﻿using MusicCatallogApp.GUI.LogInWindow;
+using MusicCatallogApp.Layers.Controller;
 using MusicCatallogApp.Layers.Model;
 using MusicCatallogApp.Layers.ModelEnum;
 using MusicCatallogApp.Layers.Repository;
@@ -25,6 +26,7 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
     {
         private ReviewAndRaitingController rarController;
         private ReviewMappingController mappingController;
+        private MusicEditorsController editorController;
         private int selectedItemId;
         public event EventHandler ReviewAdded;
         public CreateRaR(int selectedItemId)
@@ -34,6 +36,7 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
             FillComboBoxReviewWithType();
             rarController = new ReviewAndRaitingController();
             mappingController = new ReviewMappingController();
+            editorController = new MusicEditorsController();
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
@@ -58,6 +61,24 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
                 ReviewMapping newMapping = new ReviewMapping(-1, selectedItemId, new List<int> { rar.Id });
                 mappingController.add(newMapping);
             }
+
+            //za povecanje recenzije 
+            MusicEditors user = LogIn.getLoggedEditor();
+            
+            MusicEditors loggedEditor = editorController.GetById(user.Id);
+            if (loggedEditor != null)
+            {
+                loggedEditor.NumOfInputContent += 1;
+                editorController.Update(loggedEditor);
+
+                // Log to confirm the update
+                MessageBox.Show($"NumOfInputContent updated. New value: {loggedEditor.NumOfInputContent}");
+            }
+            else
+            {
+                MessageBox.Show("Editor with the given ID not found.");
+            }
+
 
             ReviewAdded?.Invoke(this, EventArgs.Empty);
             this.Close();

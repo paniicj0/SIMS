@@ -50,5 +50,10 @@ namespace MusicCatallogApp.Layers.Controller
             return editorsService.LoadFromFile();
 
         }
+
+        public MusicEditors logIn(String email, String password)
+        {
+            return editorsService.logIn(email, password);
+        }
     }
 }

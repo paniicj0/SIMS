@@ -1,5 +1,6 @@
 ﻿using MusicCatallogApp.GUI.AdminWindow;
 using MusicCatallogApp.Layers.Controller;
+using MusicCatallogApp.Layers.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,20 +23,27 @@ namespace MusicCatallogApp.GUI.LogInWindow
     public partial class LogIn : Window
     {
         private UserController userController;
+        private MusicEditorsController musicEditorsController;
         public event EventHandler LoggedIn; // Event definition
         public bool correct = false;
+        private static User loggedUser;
+        private static MusicEditors loggedMusicEditor;
 
         public LogIn()
         {
             InitializeComponent();
             userController = new UserController();
+            musicEditorsController = new MusicEditorsController();
         }
 
         private void btnLogIn_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
-            if(userController.logIn(tbEmail.Text, tbPassword.Text) != null)
+            User user = userController.logIn(tbEmail.Text, tbPassword.Text);
+            MusicEditors musicEditors = musicEditorsController.logIn(tbEmail.Text,tbPassword.Text);
+            if (user != null || musicEditors!=null)
             {
+                loggedUser = user;
+                loggedMusicEditor = musicEditors;
                 OnLoggedIn(EventArgs.Empty); // Raise the event if login is successful
                 AdminMain am=new AdminMain();
                 if (tbEmail.Text == "a" && tbPassword.Text == "a") { 
@@ -58,6 +66,26 @@ namespace MusicCatallogApp.GUI.LogInWindow
         protected virtual void OnLoggedIn(EventArgs e)
         {
             LoggedIn?.Invoke(this, e); // Raise the event
+        }
+
+        public static User getLoggedUser()
+        {
+            return loggedUser;
+        }
+
+        public static void setLoggedUser(User loggedUser)
+        {
+            LogIn.loggedUser = loggedUser;
+        }
+
+        public static MusicEditors getLoggedEditor()
+        {
+            return loggedMusicEditor;
+        }
+
+        public static void setLoggedEditor(MusicEditors loggedMusicEditor)
+        {
+            LogIn.loggedMusicEditor = loggedMusicEditor;
         }
     }
 }
