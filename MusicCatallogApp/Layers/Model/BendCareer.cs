@@ -14,17 +14,17 @@ namespace MusicCatallogApp.Layers.Model
         private List<string> participants;
         private string picture;
         private string biography;
-        private string bendRelase;
-        private string concert;
-        public BendCareer(int id,List<string> links, List<string> participants, string picture, string biography, string bendRelease, string concert)
+        private string bendRelease;//izdanje benda, menja se ako nastane neko novo u medjuvremenu
+        private List<string> concerts;
+        public BendCareer(int id,List<string> links, List<string> participants, string picture, string biography, string bendRelease, List<string> concerts)
         {
             this.id = id;
             this.links = links;
             this.participants = participants;
             this.picture = picture;
             this.biography = biography;
-            this.biography = bendRelease;
-            this.concert = concert;
+            this.bendRelease = bendRelease;
+            this.concerts = concerts;
         }
 
         public int Id {
@@ -49,12 +49,12 @@ namespace MusicCatallogApp.Layers.Model
         }
         public string BendRelease
         {
-            get { return bendRelase; }
-            set { bendRelase = value; }
+            get { return bendRelease; }
+            set { bendRelease = value; }
         }
-        public string Concert { 
-            get { return concert; }
-            set { concert = value; }
+        public List<string> Concerts { 
+            get { return concerts; }
+            set { concerts = value; }
         }
 
         public String StringToJson()
@@ -66,8 +66,8 @@ namespace MusicCatallogApp.Layers.Model
                 participants = this.participants,
                 picture = this.picture,
                 biography = this.biography,
-                bendRelase = this.bendRelase,
-                concert = this.concert
+                bendRelase = this.bendRelease,
+                concerts = this.concerts
 
             };
 

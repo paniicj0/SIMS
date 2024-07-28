@@ -13,7 +13,7 @@ namespace MusicCatallogApp.Layers.Controller
     {
         private BendCareerService bendSerivce;
 
-        private BendCareerController()
+        public BendCareerController()
         {
             bendSerivce = BendCareerService.GetInstance();
         }

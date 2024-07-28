@@ -42,5 +42,11 @@ namespace MusicCatallogApp.GUI.AdminWindow
             AddMusicEditor me=new AddMusicEditor();
             me.Show();
         }
+
+        private void btnAddBend_Click(object sender, RoutedEventArgs e)
+        {
+            AddBend b=new AddBend();
+            b.Show();
+        }
     }
 }
