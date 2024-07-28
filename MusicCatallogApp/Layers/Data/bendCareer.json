@@ -1,1 +1,19 @@
-﻿
+[
+  {
+    "Id": 1,
+    "Links": [
+      "link1",
+      "link2"
+    ],
+    "Participants": [
+      "mika mikic",
+      "pera peric"
+    ],
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+    "Biography": "Ovo je jedan vrlo slusan bend",
+    "BendRelease": "Letnji dan",
+    "Concerts": [
+      "koncert1"
+    ]
+  }
+]

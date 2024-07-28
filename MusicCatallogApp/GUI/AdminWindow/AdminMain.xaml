@@ -21,7 +21,7 @@
         <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="20">
             <Button x:Name="btnAddPreformer" Content="Add Preformer"  Margin="0,10" FontWeight="Bold" Click="btnAddPreformer_Click" Background="#FF698474"/>
             <Button x:Name="btnAddMEditor" Content="Add Music Editor" Margin="0,10" FontWeight="Bold" Background="#FF698474" Click="btnAddMEditor_Click"/>
-            <Button x:Name="btnAddBend" Content="Add Bend" Margin="0,10" FontWeight="Bold" Background="#FF698474"/>
+            <Button x:Name="btnAddBend" Content="Add Bend" Margin="0,10" FontWeight="Bold" Background="#FF698474" Click="btnAddBend_Click"/>
             <Button x:Name="btnBlock" Content="Block User" Margin="0,10" FontWeight="Bold" Click="btnBlock_Click" Background="#FF698474"/>
             <Button x:Name="btnAddTask" Content="Add Task" Margin="0,10" FontWeight="Bold"  Background="#FF698474"/>
         </StackPanel>

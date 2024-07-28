@@ -14,8 +14,11 @@ namespace MusicCatallogApp.Layers.Repository
 
         private BendCareerRepository()
         {
-            bendCareers = new List<BendCareer>();
             bendCareers = loadFromFile();
+            if (bendCareers == null)
+            {
+                bendCareers = new List<BendCareer>();
+            }
         }
 
         public static BendCareerRepository getInstance()
@@ -86,7 +89,7 @@ namespace MusicCatallogApp.Layers.Repository
                 oldBendCareer.Picture = bendCareer.Picture;
                 oldBendCareer.Biography = bendCareer.Biography;
                 oldBendCareer.BendRelease = bendCareer.BendRelease;
-                oldBendCareer.Concert = bendCareer.Concert;
+                oldBendCareer.Concerts = bendCareer.Concerts;
                 save();
             }
         }
