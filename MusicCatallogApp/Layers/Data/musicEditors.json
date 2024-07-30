@@ -14,10 +14,11 @@
     "ShowReviews": true,
     "ShowConcact": true,
     "Blocked": false,
-    "UserType": "musicEditor"
+    "UserType": "musicEditor",
+    "ReviewId": []
   },
   {
-    "NumOfInputContent": 0,
+    "NumOfInputContent": 1,
     "TasksList": [],
     "Id": 2,
     "Name": "pero",
@@ -28,7 +29,10 @@
     "ShowReviews": true,
     "ShowConcact": true,
     "Blocked": false,
-    "UserType": "musicEditor"
+    "UserType": "musicEditor",
+    "ReviewId": [
+      18
+    ]
   },
   {
     "NumOfInputContent": 0,
@@ -42,7 +46,8 @@
     "ShowReviews": true,
     "ShowConcact": false,
     "Blocked": false,
-    "UserType": "musicEditor"
+    "UserType": "musicEditor",
+    "ReviewId": []
   },
   {
     "NumOfInputContent": 0,
@@ -56,6 +61,7 @@
     "ShowReviews": true,
     "ShowConcact": false,
     "Blocked": false,
-    "UserType": "musicEditor"
+    "UserType": "musicEditor",
+    "ReviewId": []
   }
 ]

@@ -5,11 +5,55 @@
     "Surname": "wef",
     "Email": "j",
     "Password": "j",
-    "Favourites": [],
+    "Favourites": [
+      {
+        "$type": "MusicCatallogApp.Layers.Model.MusicalPiece, MusicCatallogApp",
+        "Id": 4,
+        "Name": "Crvenka",
+        "Text": "Ovo je jedan jako lep bend lupam gluposti",
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\images.jpeg",
+        "CreationDate": "2024-07-10",
+        "Participants": [
+          {
+            "Id": 1,
+            "Name": "kjdsn",
+            "Surname": "nkjlnjk",
+            "Biography": "lnj",
+            "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
+            "Type": 0,
+            "SoloCareer": true,
+            "BendCareer": false,
+            "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+          }
+        ]
+      },
+      {
+        "$type": "MusicCatallogApp.Layers.Model.BendCareer, MusicCatallogApp",
+        "Id": 1,
+        "Links": [
+          "link1",
+          "link2"
+        ],
+        "Participants": [
+          "mika mikic",
+          "pera peric"
+        ],
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+        "Biography": "Ovo je jedan vrlo slusan bend",
+        "BendRelease": "Letnji dan",
+        "Concerts": [
+          "koncert1"
+        ]
+      }
+    ],
     "ShowReviews": true,
     "ShowConcact": true,
     "Blocked": false,
-    "UserType": "user"
+    "UserType": "user",
+    "ReviewId": [
+      15,
+      17
+    ]
   },
   {
     "Id": 2,
@@ -21,7 +65,8 @@
     "ShowReviews": true,
     "ShowConcact": false,
     "Blocked": false,
-    "UserType": "user"
+    "UserType": "user",
+    "ReviewId": []
   },
   {
     "Id": 3,
@@ -33,7 +78,8 @@
     "ShowReviews": true,
     "ShowConcact": true,
     "Blocked": false,
-    "UserType": "user"
+    "UserType": "user",
+    "ReviewId": []
   },
   {
     "Id": 4,
@@ -45,7 +91,8 @@
     "ShowReviews": true,
     "ShowConcact": false,
     "Blocked": false,
-    "UserType": "user"
+    "UserType": "user",
+    "ReviewId": []
   },
   {
     "Id": 5,
@@ -57,7 +104,8 @@
     "ShowReviews": true,
     "ShowConcact": true,
     "Blocked": true,
-    "UserType": "user"
+    "UserType": "user",
+    "ReviewId": []
   },
   {
     "Id": 6,
@@ -69,18 +117,7 @@
     "ShowReviews": true,
     "ShowConcact": true,
     "Blocked": false,
-    "UserType": "user"
-  },
-  {
-    "Id": 7,
-    "Name": "kaca",
-    "Surname": "katic",
-    "Email": "kaka@gmail.com",
-    "Password": "asfeg",
-    "Favourites": [],
-    "ShowReviews": true,
-    "ShowConcact": true,
-    "Blocked": false,
-    "UserType": "user"
+    "UserType": "user",
+    "ReviewId": []
   }
 ]

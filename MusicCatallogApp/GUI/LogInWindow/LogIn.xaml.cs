@@ -1,4 +1,6 @@
 ﻿using MusicCatallogApp.GUI.AdminWindow;
+using MusicCatallogApp.GUI.MusicEditorWindow;
+using MusicCatallogApp.GUI.UserWindow;
 using MusicCatallogApp.Layers.Controller;
 using MusicCatallogApp.Layers.Model;
 using System;
@@ -39,16 +41,21 @@ namespace MusicCatallogApp.GUI.LogInWindow
         private void btnLogIn_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             User user = userController.logIn(tbEmail.Text, tbPassword.Text);
-            MusicEditors musicEditors = musicEditorsController.logIn(tbEmail.Text,tbPassword.Text);
-            if (user != null || musicEditors!=null)
+            MusicEditors musicEditors = musicEditorsController.logIn(tbEmail.Text, tbPassword.Text);
+
+            if (user != null)
             {
                 loggedUser = user;
+                LoggedUser lu = new LoggedUser();
+                lu.Show();
+                
+                this.Close();
+            }
+            else if (musicEditors != null)
+            {
                 loggedMusicEditor = musicEditors;
-                OnLoggedIn(EventArgs.Empty); // Raise the event if login is successful
-                AdminMain am=new AdminMain();
-                if (tbEmail.Text == "a" && tbPassword.Text == "a") { 
-                    am.Show();
-                }
+                LoggedEditor le = new LoggedEditor();
+                le.Show();
                 this.Close();
             }
             else
@@ -56,7 +63,19 @@ namespace MusicCatallogApp.GUI.LogInWindow
                 MessageBox.Show("Invalid email or password.");
             }
 
+            if (loggedUser != null || loggedMusicEditor != null)
+            {
+                OnLoggedIn(EventArgs.Empty); // Raise the event if login is successful
+            }
+
+            if (tbEmail.Text == "a" && tbPassword.Text == "a")
+            {
+                AdminMain am = new AdminMain();
+                am.Show();
+                this.Close();
+            }
         }
+
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {

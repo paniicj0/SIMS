@@ -92,6 +92,7 @@ namespace MusicCatallogApp.Layers.Repository
                 oldUser.ShowConcact = user.ShowConcact;
                 oldUser.Blocked = user.Blocked;
                 oldUser.UserType = user.UserType;
+                oldUser.ReviewId = user.ReviewId;
                 save(); 
             }
         }

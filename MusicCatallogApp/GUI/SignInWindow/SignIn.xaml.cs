@@ -39,7 +39,7 @@ namespace MusicCatallogApp.GUI.SignInWindow
 
             bool showContact = btnYes.IsChecked == true;
 
-            User user = new User(-1, name, surname, email+"@gmail.com", password, new List<string> { }, true, showContact, false, UserTypeEnum.UserType.user);
+            User user = new User(-1, name, surname, email+"@gmail.com", password, new List<object> { }, true, showContact, false, UserTypeEnum.UserType.user,new List<int> { });
             userController.Add(user);
 
             this.Close();
