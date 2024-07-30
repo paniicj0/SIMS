@@ -13,7 +13,7 @@ namespace MusicCatallogApp.Layers.Controller
     {
         private static AlbumService albumService;
 
-        private AlbumController()
+        public AlbumController()
         {
             albumService = AlbumService.GetInstance();
         }

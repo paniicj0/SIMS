@@ -38,21 +38,26 @@
     "Id": 5,
     "ItemId": 5,
     "ReviewIds": [
-      9
+      9,
+      17
     ]
   },
   {
     "Id": 6,
     "ItemId": 6,
     "ReviewIds": [
-      12
+      12,
+      15,
+      16,
+      19
     ]
   },
   {
     "Id": 7,
     "ItemId": 4,
     "ReviewIds": [
-      13
+      13,
+      18
     ]
   }
 ]

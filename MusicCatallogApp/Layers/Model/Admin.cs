@@ -10,8 +10,8 @@ namespace MusicCatallogApp.Layers.Model
 {
     class Admin: User
     {
-        public Admin(int id, string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType userType)
-            : base(id,name, surname, email, password, favourites, showReviews, showConcact, blocked,userType)
+        public Admin(int id, string name, string surname, string email, string password, List<object> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType userType,List<int> reviewId)
+            : base(id,name, surname, email, password, favourites, showReviews, showConcact, blocked,userType,reviewId)
         {}
 
         public override string StringToJson()
@@ -27,7 +27,8 @@ namespace MusicCatallogApp.Layers.Model
                 ShowReviews,
                 ShowConcact,
                 Blocked,
-                UserType
+                UserType,
+                ReviewId
             };
             return JsonConvert.SerializeObject(adminObject, Formatting.Indented);
         }

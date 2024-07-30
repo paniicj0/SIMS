@@ -111,7 +111,6 @@ namespace MusicCatallogApp
         {
             if (lbMPiece.SelectedItem is MusicalPiece selectedPiece)
             {
-                // Handle selection logic for MusicalPiece
                 MessageBox.Show($"Selected Musical Piece: {selectedPiece.Name}");
             }
         }
@@ -120,7 +119,6 @@ namespace MusicCatallogApp
         {
             if (lbPreformer.SelectedItem is Preformer selectedPreformer)
             {
-                // Handle selection logic for Preformer
                 MessageBox.Show($"Selected Preformer: {selectedPreformer.Name} {selectedPreformer.Surname}");
             }
         }

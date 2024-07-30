@@ -96,6 +96,7 @@ namespace MusicCatallogApp.Layers.Repository
                 oldEditor.ShowConcact = editor.ShowConcact;
                 oldEditor.Blocked = editor.Blocked;
                 oldEditor.UserType = editor.UserType;
+                oldEditor.ReviewId = editor.ReviewId;
                 save();
             }
         }

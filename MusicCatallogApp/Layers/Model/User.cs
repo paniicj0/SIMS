@@ -15,13 +15,14 @@ namespace MusicCatallogApp.Layers.Model
         private string surname;
         private string email;
         private string password;
-        private List<string> favourites;
+        private List<object> favourites;
         private bool showReviews;
         private bool showConcact;
         private bool blocked;
         private UserTypeEnum.UserType userType;
+        private List<int> reviewId;
 
-        public User(int id,string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType  userType)
+        public User(int id,string name, string surname, string email, string password, List<object> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType  userType,List<int> reviewId)
         {
             this.id = id;
             this.name = name;
@@ -33,6 +34,7 @@ namespace MusicCatallogApp.Layers.Model
             this.showConcact = showConcact;
             this.blocked = blocked;
             this.userType = userType;
+            this.reviewId = reviewId;
         }
 
         public int Id
@@ -61,7 +63,7 @@ namespace MusicCatallogApp.Layers.Model
             get { return password; }
             set { password = value; }
         }
-        public List<string> Favourites { 
+        public List<object> Favourites { 
             get { return favourites; }  
             set { favourites = value; } 
         }
@@ -81,6 +83,12 @@ namespace MusicCatallogApp.Layers.Model
             get { return userType; }
             set { userType = value; } }
 
+        public List<int> ReviewId
+        {
+            get { return reviewId; }
+            set {  reviewId = value; }
+        }
+
         virtual public string StringToJson()
         {
             var userObject = new
@@ -95,6 +103,7 @@ namespace MusicCatallogApp.Layers.Model
                 showConcact = this.showConcact,
                 blocked = this.blocked,
                 userTypeEnum = this.userType,
+                reviewId = this.reviewId
             };
 
             return JsonConvert.SerializeObject(userObject, Formatting.Indented);

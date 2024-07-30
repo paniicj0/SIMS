@@ -15,8 +15,8 @@ namespace MusicCatallogApp.Layers.Model
         private int numOfInputContent;
         private List<string> tasksList;
 
-        public MusicEditors(int id,string name, string surname, string email, string password, List<string> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType userType, int numOfInputContent, List<string> tasksList)
-            : base(id,name, surname, email, password, favourites, showReviews, showConcact, blocked,userType)
+        public MusicEditors(int id,string name, string surname, string email, string password, List<object> favourites, bool showReviews, bool showConcact, bool blocked,UserTypeEnum.UserType userType,List<int> reviewId, int numOfInputContent, List<string> tasksList)
+            : base(id,name, surname, email, password, favourites, showReviews, showConcact, blocked,userType,reviewId)
         {
             this.numOfInputContent = numOfInputContent;
             this.tasksList = tasksList;

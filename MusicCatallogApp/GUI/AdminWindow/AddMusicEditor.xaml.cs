@@ -38,7 +38,7 @@ namespace MusicCatallogApp.GUI.AdminWindow
             String password = tbPassword.Text;
             bool showContact = btnYes.IsChecked == true;
 
-            MusicEditors me = new MusicEditors(-1, name, surname, email + "@gmail.com", password, new List<string> { }, true, showContact, false, UserTypeEnum.UserType.musicEditor, 0, new List<string> { });
+            MusicEditors me = new MusicEditors(-1, name, surname, email + "@gmail.com", password, new List<object> { }, true, showContact, false, UserTypeEnum.UserType.musicEditor, new List<int> { } , 0 , new List<string> { });
             musicEditorsController.Add(me);
             this.Close();
         }

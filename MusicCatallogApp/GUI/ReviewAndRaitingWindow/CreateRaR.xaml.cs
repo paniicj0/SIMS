@@ -27,6 +27,7 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
         private ReviewAndRaitingController rarController;
         private ReviewMappingController mappingController;
         private MusicEditorsController editorController;
+        private UserController userController;
         private int selectedItemId;
         public event EventHandler ReviewAdded;
         public CreateRaR(int selectedItemId)
@@ -37,6 +38,7 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
             rarController = new ReviewAndRaitingController();
             mappingController = new ReviewMappingController();
             editorController = new MusicEditorsController();
+            userController  = new UserController();
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
@@ -62,27 +64,47 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
                 mappingController.add(newMapping);
             }
 
-            //za povecanje recenzije 
-            MusicEditors user = LogIn.getLoggedEditor();
-            
-            MusicEditors loggedEditor = editorController.GetById(user.Id);
-            if (loggedEditor != null)
+            User u = LogIn.getLoggedUser();
+            if (u != null)
             {
-                loggedEditor.NumOfInputContent += 1;
-                editorController.Update(loggedEditor);
-
-                // Log to confirm the update
-                MessageBox.Show($"NumOfInputContent updated. New value: {loggedEditor.NumOfInputContent}");
-            }
-            else
-            {
-                MessageBox.Show("Editor with the given ID not found.");
+                User loggedUser = userController.GetById(u.Id);
+                if (loggedUser != null)
+                {
+                    if (loggedUser.ReviewId == null)
+                    {
+                        loggedUser.ReviewId = new List<int>();
+                    }
+                    loggedUser.ReviewId.Add(rar.Id);
+                    userController.Update(loggedUser);
+                }
             }
 
+            MusicEditors le = LogIn.getLoggedEditor();
+            if (le != null)
+            {
+                MusicEditors loggedEditor = editorController.GetById(le.Id);
+                if (loggedEditor != null)
+                {
+                    loggedEditor.NumOfInputContent += 1;
+                    if (loggedEditor.ReviewId == null)
+                    {
+                        loggedEditor.ReviewId = new List<int>();
+                    }
+                    loggedEditor.ReviewId.Add(rar.Id);
+                    editorController.Update(loggedEditor);
+
+                    MessageBox.Show($"NumOfInputContent updated. New value: {loggedEditor.NumOfInputContent}");
+                }
+                else
+                {
+                    MessageBox.Show("Editor with the given ID not found.");
+                }
+            }
 
             ReviewAdded?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
+
 
 
         private void FillComboBoxReviewWithType()
