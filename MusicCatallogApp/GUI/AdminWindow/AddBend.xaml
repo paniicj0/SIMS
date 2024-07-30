@@ -11,26 +11,26 @@
         <ListBox x:Name="lbLinks" HorizontalAlignment="Left" Height="80" Margin="10,40,0,0" VerticalAlignment="Top" Width="300"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top">
             <TextBox x:Name="tbLinks" Width="200" />
-            <Button x:Name="btnAddLink" Content="Add" Click="btnAddLink_Click" Margin="5,0,0,0"/>
+            <Button x:Name="btnAddLink" Content="Add" Click="btnAddLink_Click" Margin="5,0,0,0" Background="#FF698474"/>
         </StackPanel>
 
         <Label x:Name="lblParticipants" Content="Participants:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <ListBox x:Name="lbParticipants" HorizontalAlignment="Left" Height="80" Margin="10,190,0,0" VerticalAlignment="Top" Width="300"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top">
             <TextBox x:Name="tbParticipants" Width="200" />
-            <Button x:Name="btnAddParticipant" Content="Add" Click="btnAddParticipant_Click" Margin="5,0,0,0"/>
+            <Button x:Name="btnAddParticipant" Content="Add" Click="btnAddParticipant_Click" Margin="5,0,0,0" Background="#FF698474"/>
         </StackPanel>
 
         <Label x:Name="lblConcerts" Content="Concerts:" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <ListBox x:Name="lbConcerts" HorizontalAlignment="Left" Height="80" Margin="10,340,0,0" VerticalAlignment="Top" Width="300"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top">
             <TextBox x:Name="tbConcerts" Width="200" />
-            <Button x:Name="btnAddConcert" Content="Add" Click="btnAddConcert_Click" Margin="5,0,0,0"/>
+            <Button x:Name="btnAddConcert" Content="Add" Click="btnAddConcert_Click" Margin="5,0,0,0" Background="#FF698474"/>
         </StackPanel>
 
         <Label x:Name="lblPicture" Content="Picture:" HorizontalAlignment="Left" Margin="350,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Image x:Name="imgPicture" Height="100" Width="100" Margin="350,40,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAddImage" Content="Choose image" HorizontalAlignment="Left" Margin="350,150,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnAddImage_Click"/>
+        <Button x:Name="btnAddImage" Content="Choose image" HorizontalAlignment="Left" Margin="350,150,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnAddImage_Click" Background="#FF698474"/>
 
         <Label x:Name="lblBiography" Content="Biography:" HorizontalAlignment="Left" Margin="350,190,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="tbBiography" HorizontalAlignment="Left" Margin="350,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="100"/>
@@ -38,6 +38,6 @@
         <Label x:Name="lblBendRelease" Content="Last bend release:" HorizontalAlignment="Left" Margin="350,330,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="tbBendRelease" HorizontalAlignment="Left" Margin="350,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
 
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="670,380,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="100" Click="btnSave_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="670,380,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="100" Click="btnSave_Click" Background="#FF698474"/>
     </Grid>
 </Window>

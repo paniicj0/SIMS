@@ -52,7 +52,6 @@ namespace MusicCatallogApp.GUI.UserWindow
                 var selectedItem = dgvBends.SelectedItem;
                 favourites.Add(selectedItem);
                 lbFavourites.Items.Add("One added to the list!");
-               // lbFavourites.Items.Add(selectedItem.ToString()); // Adds the object's string representation
             }
         }
 

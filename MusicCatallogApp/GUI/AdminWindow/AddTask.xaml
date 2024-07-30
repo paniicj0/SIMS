@@ -14,12 +14,12 @@
 
         <Label x:Name="lblTask" Content="Task:" HorizontalAlignment="Left" Margin="38,274,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="tbTask" HorizontalAlignment="Left" Margin="108,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="btnAddTask" Content="Add Task" HorizontalAlignment="Left" Margin="345,271,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70" Height="36" Click="btnAddTask_Click"/>
+        <Button x:Name="btnAddTask" Content="Add Task" HorizontalAlignment="Left" Margin="345,271,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="70" Height="36" Click="btnAddTask_Click" Background="#FF698474"/>
 
         <Label x:Name="lblTasks" Content="Tasks:" HorizontalAlignment="Left" Margin="33,321,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <ListBox x:Name="lbTasks" Margin="108,330,300,10"/>
 
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Right" Margin="0,354,124,0" VerticalAlignment="Top" Height="36" Width="70" FontWeight="Bold" Click="btnSave_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Right" Margin="0,354,124,0" VerticalAlignment="Top" Height="36" Width="70" FontWeight="Bold" Click="btnSave_Click" Background="#FF698474"/>
         <TextBox x:Name="tbSearch" HorizontalAlignment="Right" Margin="0,230,32,0" Width="228" Text="Search here..." VerticalAlignment="Top" TextChanged="tbSearch_TextChanged"/>
     </Grid>
 </Window>
