@@ -2,7 +2,7 @@
   {
     "Id": 1,
     "Name": "joca",
-    "Surname": "wef",
+    "Surname": "panic",
     "Email": "j",
     "Password": "j",
     "Favourites": [
@@ -47,7 +47,7 @@
       }
     ],
     "ShowReviews": true,
-    "ShowConcact": true,
+    "ShowConcact": false,
     "Blocked": false,
     "UserType": "user",
     "ReviewId": [
