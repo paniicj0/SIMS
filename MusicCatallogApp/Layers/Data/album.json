@@ -1,7 +1,12 @@
-﻿[
+[
   {
     "Id": 1,
     "Name": "Album1",
-    "AlbumType": "CD"
+    "AlbumType": 0
+  },
+  {
+    "Id": 2,
+    "Name": "Drugi album",
+    "AlbumType": 2
   }
 ]
