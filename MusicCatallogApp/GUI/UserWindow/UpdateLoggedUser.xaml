@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicCatallogApp.GUI.UserWindow"
         mc:Ignorable="d"
-        Title="UpdateLoggedUser" Height="450" Width="800">
-    <Grid>
-        
+        Title="UpdateLoggedUser" Height="290" Width="390">
+    <Grid Margin="10" Background="#FFDCA47C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Name:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+        <TextBox x:Name="tbName" Grid.Row="0" Grid.Column="1" Width="200" Margin="0,5"/>
+
+        <Label Content="Surname:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+        <TextBox x:Name="tbSurname" Grid.Row="1" Grid.Column="1" Width="200" Margin="0,5"/>
+
+        <Label Content="Email:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+        <TextBox x:Name="tbEmail" Grid.Row="2" Grid.Column="1" Width="200" Margin="0,5"/>
+
+        <Label Content="Password:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+        <PasswordBox x:Name="tbPassword" Grid.Row="3" Grid.Column="1" Width="200" Margin="0,5"/>
+
+        <Label Content="Show reviews:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="0,5">
+            <RadioButton x:Name="btnYesR" Content="Yes" Margin="0,0,10,0"/>
+            <RadioButton x:Name="btnNoR" Content="No"/>
+        </StackPanel>
+
+        <Label Content="Show contact:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,10,0"/>
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Margin="0,5">
+            <RadioButton x:Name="btnYesC" Content="Yes" Margin="0,0,10,0"/>
+            <RadioButton x:Name="btnNoC" Content="No"/>
+        </StackPanel>
+
+        <Button x:Name="btnSave" Background="#FF698474" Content="Save" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,20,0,0" Width="100" Click="btnSave_Click"/>
     </Grid>
 </Window>
