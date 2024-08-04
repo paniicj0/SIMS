@@ -54,5 +54,11 @@ namespace MusicCatallogApp.GUI.AdminWindow
             AddTask task=new AddTask(); 
             task.Show();
         }
+
+        private void btnAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            AddAlbum album=new AddAlbum();
+            album.Show();
+        }
     }
 }
