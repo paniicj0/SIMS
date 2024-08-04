@@ -119,5 +119,11 @@ namespace MusicCatallogApp.GUI.UserWindow
         {
             LoadData();
         }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateLoggedUser updateUser=new UpdateLoggedUser();
+            updateUser.Show();
+        }
     }
 }
