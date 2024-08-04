@@ -64,5 +64,10 @@ namespace MusicCatallogApp.Layers.Model
         }
 
         public string DisplayInfo => $"{Name} {Surname} {Type} ({(SoloCareer ? "Solo" : "Band")})";
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname} ({Type})";
+        }
     }
 }

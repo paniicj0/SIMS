@@ -66,5 +66,11 @@ namespace MusicCatallogApp.Layers.Model
             return JsonConvert.SerializeObject(pieceObject,Formatting.Indented);
         }
 
+        public override string ToString()
+        {
+            string participantsInfo = string.Join(", ", Participants.Select(p => p.DisplayInfo));
+            return $"{Name} - {Text} (Created on: {CreationDate.ToShortDateString()}) Participants: {participantsInfo}";
+        }
+
     }
 }

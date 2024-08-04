@@ -68,12 +68,13 @@ namespace MusicCatallogApp
 
         private void LoadData()
         {
-            originalMusicalPieces = musicalPieceRepository.loadFromFile();
+            var originalMusicalPieces = musicalPieceRepository.loadFromFile();
             lbMPiece.ItemsSource = originalMusicalPieces;
 
-            originalPreformers = preformerRepository.loadFromFile();
+            var originalPreformers = preformerRepository.loadFromFile();
             lbPreformer.ItemsSource = originalPreformers;
         }
+
 
         private void tbSearchMPiece_TextChanged(object sender, TextChangedEventArgs e)
         {

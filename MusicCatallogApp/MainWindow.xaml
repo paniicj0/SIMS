@@ -45,6 +45,13 @@
                                 <Run Text="Participants: "/>
                                 <Run Text="{Binding Participants}"/>
                             </TextBlock>
+                            <ItemsControl ItemsSource="{Binding Participants}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding DisplayInfo}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
                             <Image Source="{Binding Picture}" Width="100" Height="100" Stretch="UniformToFill"/>
                         </StackPanel>
                     </DataTemplate>
