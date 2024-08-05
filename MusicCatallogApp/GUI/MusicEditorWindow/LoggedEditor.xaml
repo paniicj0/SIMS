@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicCatallogApp.GUI.MusicEditorWindow"
         mc:Ignorable="d"
-        Title="LoggedEditor" Height="450" Width="800">
-    <Grid>
-        
+        Title="LoggedEditor" Height="250" Width="400">
+    <Grid Margin="10" Background="#FFDCA47C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnAddMP" Content="Add Musical Piece" Grid.Row="0" Grid.Column="0" Margin="10" Padding="10" FontWeight="Bold"  Background="#FF698474" Click="btnAddMP_Click"/>
+        <Button x:Name="btnApproveCom" Content="Approve Comments" Grid.Row="1" Grid.Column="0" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474"/>
+        <Button x:Name="btnAddAlbum" Content="Add Album" Grid.Row="1" Grid.Column="1" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474"/>
+        <Button x:Name="btnAddBend" Content="Add Band" Grid.Row="0" Grid.Column="1" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474"/>
+
     </Grid>
 </Window>

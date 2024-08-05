@@ -23,5 +23,11 @@ namespace MusicCatallogApp.GUI.MusicEditorWindow
         {
             InitializeComponent();
         }
+
+        private void btnAddMP_Click(object sender, RoutedEventArgs e)
+        {
+            AddMusicalPiece musicalPiece = new AddMusicalPiece();
+            musicalPiece.Show();
+        }
     }
 }
