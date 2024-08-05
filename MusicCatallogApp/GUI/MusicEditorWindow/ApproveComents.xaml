@@ -1,0 +1,22 @@
+﻿<Window x:Class="MusicCatallogApp.GUI.MusicEditorWindow.ApproveComents"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCatallogApp.GUI.MusicEditorWindow"
+        mc:Ignorable="d"
+        Title="ApproveComents" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10" Background="#FFDCA47C">
+        <DataGrid x:Name="dgvCom" AutoGenerateColumns="False" IsReadOnly="False" Margin="0,0,0,50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Review" Binding="{Binding Review}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="NumOfStars" Binding="{Binding NumOfStars}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Grade" Binding="{Binding Grade}" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Approved" Binding="{Binding IsApproved, Mode=TwoWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnApprove" Background="#FF698474" Content="Approve" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Height="30" Margin="0,0,0,10" FontWeight="Bold" Click="btnApprove_Click"/>
+        <Button x:Name="btnRemove" Background="#FF698474" Content="Remove" HorizontalAlignment="Left" Margin="150,0,0,10"  Width="100" Height="30" VerticalAlignment="Bottom" FontWeight="Bold" Click="btnRemove_Click"/>
+    </Grid>
+</Window>

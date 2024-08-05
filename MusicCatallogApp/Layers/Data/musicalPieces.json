@@ -78,5 +78,25 @@
         "DisplayInfo": "sdlkn ldsnsd singer (Solo)"
       }
     ]
+  },
+  {
+    "Id": 8,
+    "Name": "Novo delo",
+    "Text": "Ovo je novo",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+    "CreationDate": "2024-05-20",
+    "Participants": [
+      {
+        "Id": 5,
+        "Name": "Petar",
+        "Surname": "Peric",
+        "Biography": "Neki tupan",
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+        "Type": 2,
+        "SoloCareer": true,
+        "BendCareer": true,
+        "DisplayInfo": "Petar Peric arranger (Solo)"
+      }
+    ]
   }
 ]

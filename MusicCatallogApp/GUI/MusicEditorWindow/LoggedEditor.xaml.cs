@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MusicCatallogApp.GUI.AdminWindow;
+using MusicCatallogApp.GUI.UserWindow;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +30,36 @@ namespace MusicCatallogApp.GUI.MusicEditorWindow
         {
             AddMusicalPiece musicalPiece = new AddMusicalPiece();
             musicalPiece.Show();
+        }
+
+        private void btnApproveCom_Click(object sender, RoutedEventArgs e)
+        {
+            ApproveComents approveComents = new ApproveComents();
+            approveComents.Show();
+        }
+
+        private void btnAddBend_Click(object sender, RoutedEventArgs e)
+        {
+            AddBend addBend = new AddBend();
+            addBend.Show();
+        }
+
+        private void btnAddAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            AddAlbum addAlbum = new AddAlbum();
+            addAlbum.Show();
+        }
+
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            LoggedUser loggedUser = new LoggedUser();
+            loggedUser.Show();
+        }
+
+        private void btTasks_Click(object sender, RoutedEventArgs e)
+        {
+            Tasks tasks=new Tasks();
+            tasks.Show();
         }
     }
 }
