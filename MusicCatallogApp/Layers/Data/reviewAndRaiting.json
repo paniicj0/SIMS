@@ -3,7 +3,7 @@
     "Id": 1,
     "Review": "Excellent performance!",
     "Grade": 5,
-    "Approved": true,
+    "Approved": false,
     "NumOfStars": 5,
     "ReviewType": 1
   },
@@ -11,7 +11,7 @@
     "Id": 2,
     "Review": "Good but could be better.",
     "Grade": 3,
-    "Approved": true,
+    "Approved": false,
     "NumOfStars": 4,
     "ReviewType": 1
   },
@@ -147,8 +147,16 @@
     "Id": 19,
     "Review": "love it",
     "Grade": 4,
-    "Approved": false,
+    "Approved": true,
     "NumOfStars": 5,
+    "ReviewType": 0
+  },
+  {
+    "Id": 20,
+    "Review": "Jako zanimljivo",
+    "Grade": 5,
+    "Approved": true,
+    "NumOfStars": 4,
     "ReviewType": 0
   }
 ]

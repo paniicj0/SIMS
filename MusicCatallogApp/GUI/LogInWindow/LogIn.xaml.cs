@@ -38,45 +38,6 @@ namespace MusicCatallogApp.GUI.LogInWindow
             musicEditorsController = new MusicEditorsController();
         }
 
-        private void btnLogIn_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            User user = userController.logIn(tbEmail.Text, tbPassword.Text);
-            MusicEditors musicEditors = musicEditorsController.logIn(tbEmail.Text, tbPassword.Text);
-
-            if (user != null)
-            {
-                loggedUser = user;
-                LoggedUser lu = new LoggedUser();
-                lu.Show();
-                
-                this.Close();
-            }
-            else if (musicEditors != null)
-            {
-                loggedMusicEditor = musicEditors;
-                LoggedEditor le = new LoggedEditor();
-                le.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Invalid email or password.");
-            }
-
-            if (loggedUser != null || loggedMusicEditor != null)
-            {
-                OnLoggedIn(EventArgs.Empty); // Raise the event if login is successful
-            }
-
-            if (tbEmail.Text == "a" && tbPassword.Text == "a")
-            {
-                AdminMain am = new AdminMain();
-                am.Show();
-                this.Close();
-            }
-        }
-
-
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
             this.Close ();
@@ -105,6 +66,44 @@ namespace MusicCatallogApp.GUI.LogInWindow
         public static void setLoggedEditor(MusicEditors loggedMusicEditor)
         {
             LogIn.loggedMusicEditor = loggedMusicEditor;
+        }
+
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
+        {
+            User user = userController.logIn(tbEmail.Text, tbPassword.Text);
+            MusicEditors musicEditors = musicEditorsController.logIn(tbEmail.Text, tbPassword.Text);
+
+            if (user != null)
+            {
+                loggedUser = user;
+                LoggedUser lu = new LoggedUser();
+                lu.Show();
+
+                this.Close();
+            }
+            else if (musicEditors != null)
+            {
+                loggedMusicEditor = musicEditors;
+                LoggedEditor le = new LoggedEditor();
+                le.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid email or password.");
+            }
+
+            if (loggedUser != null || loggedMusicEditor != null)
+            {
+                OnLoggedIn(EventArgs.Empty); // Raise the event if login is successful
+            }
+
+            if (tbEmail.Text == "a" && tbPassword.Text == "a")
+            {
+                AdminMain am = new AdminMain();
+                am.Show();
+                this.Close();
+            }
         }
     }
 }

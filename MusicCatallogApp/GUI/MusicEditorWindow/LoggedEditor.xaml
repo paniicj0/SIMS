@@ -20,9 +20,11 @@
         </Grid.ColumnDefinitions>
 
         <Button x:Name="btnAddMP" Content="Add Musical Piece" Grid.Row="0" Grid.Column="0" Margin="10" Padding="10" FontWeight="Bold"  Background="#FF698474" Click="btnAddMP_Click"/>
-        <Button x:Name="btnApproveCom" Content="Approve Comments" Grid.Row="1" Grid.Column="0" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474"/>
-        <Button x:Name="btnAddAlbum" Content="Add Album" Grid.Row="1" Grid.Column="1" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474"/>
-        <Button x:Name="btnAddBend" Content="Add Band" Grid.Row="0" Grid.Column="1" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474"/>
+        <Button x:Name="btnApproveCom" Content="Approve Comments" Grid.Row="1" Grid.Column="0" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474" Click="btnApproveCom_Click"/>
+        <Button x:Name="btnAddAlbum" Content="Add Album" Grid.Row="1" Grid.Column="1" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474" Click="btnAddAlbum_Click"/>
+        <Button x:Name="btnAddBend" Content="Add Band" Grid.Row="0" Grid.Column="1" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474" Click="btnAddBend_Click"/>
+        <Button x:Name="btnProfile" Content="My profile" Grid.Row="2" Grid.Column="0" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474" Click="btnProfile_Click" />
+        <Button x:Name="btTasks" Content="Tasks" Grid.Row="2" Grid.Column="1" Margin="10" Padding="10" FontWeight="Bold" Background="#FF698474" Click="btTasks_Click"  />
 
     </Grid>
 </Window>
