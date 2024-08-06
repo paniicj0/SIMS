@@ -30,8 +30,8 @@ namespace MusicCatallogApp
             InitializeComponent();
             InitializeRepositories();
             userController = new UserController();
-            UpdateReviewButtonStatus();
             LoadData();
+            UpdateReviewButtonStatus();
         }
 
         private void UpdateReviewButtonStatus()
@@ -68,13 +68,20 @@ namespace MusicCatallogApp
 
         private void LoadData()
         {
-            var originalMusicalPieces = musicalPieceRepository.loadFromFile();
+            originalMusicalPieces = musicalPieceRepository.loadFromFile();
+            if (originalMusicalPieces == null)
+            {
+                originalMusicalPieces = new List<MusicalPiece>();
+            }
             lbMPiece.ItemsSource = originalMusicalPieces;
 
-            var originalPreformers = preformerRepository.loadFromFile();
+            originalPreformers = preformerRepository.loadFromFile();
+            if (originalPreformers == null)
+            {
+                originalPreformers = new List<Preformer>();
+            }
             lbPreformer.ItemsSource = originalPreformers;
         }
-
 
         private void tbSearchMPiece_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -90,7 +97,12 @@ namespace MusicCatallogApp
 
                 lbMPiece.ItemsSource = filteredList;
             }
+            else
+            {
+                MessageBox.Show("No musical pieces available.");
+            }
         }
+
 
         private void tbSearchPreformer_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -106,7 +118,12 @@ namespace MusicCatallogApp
 
                 lbPreformer.ItemsSource = filteredList;
             }
+            else
+            {
+                MessageBox.Show("No performers available.");
+            }
         }
+
 
         private void lbMPiece_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

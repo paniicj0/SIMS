@@ -158,5 +158,13 @@
     "Approved": true,
     "NumOfStars": 4,
     "ReviewType": 0
+  },
+  {
+    "Id": 21,
+    "Review": "Ne svidja mi se",
+    "Grade": 3,
+    "Approved": true,
+    "NumOfStars": 2,
+    "ReviewType": 1
   }
 ]
