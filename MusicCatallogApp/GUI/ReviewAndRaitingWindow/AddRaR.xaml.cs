@@ -53,7 +53,10 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
             var reviewMapping = mappingController.getAll().FirstOrDefault(rm => rm.ItemId == selectedId);
             if (reviewMapping != null)
             {
-                reviews = reviewMapping.ReviewIds.Select(id => rarController.GetById(id)).ToList();
+                reviews = reviewMapping.ReviewIds
+                                        .Select(id => rarController.GetById(id))
+                                        .Where(review => review.Approved) // Filter only approved reviews
+                                        .ToList();
                 lbReviews.ItemsSource = reviews;
             }
         }
