@@ -60,5 +60,12 @@ namespace MusicCatallogApp.GUI.AdminWindow
             AddAlbum album=new AddAlbum();
             album.Show();
         }
+
+        private void btnTopList_Click(object sender, RoutedEventArgs e)
+        {
+            MEditorTopList mEditorTopList = new MEditorTopList();
+            mEditorTopList.Show();
+        }
+
     }
 }

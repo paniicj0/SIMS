@@ -166,5 +166,37 @@
     "Approved": true,
     "NumOfStars": 2,
     "ReviewType": 1
+  },
+  {
+    "Id": 22,
+    "Review": "ovo je zanimljivo",
+    "Grade": 4,
+    "Approved": true,
+    "NumOfStars": 3,
+    "ReviewType": 2
+  },
+  {
+    "Id": 23,
+    "Review": "fino delo i ljudi",
+    "Grade": 3,
+    "Approved": true,
+    "NumOfStars": 4,
+    "ReviewType": 0
+  },
+  {
+    "Id": 24,
+    "Review": "ne volim",
+    "Grade": 3,
+    "Approved": true,
+    "NumOfStars": 1,
+    "ReviewType": 0
+  },
+  {
+    "Id": 25,
+    "Review": "this is fine as vine",
+    "Grade": 5,
+    "Approved": false,
+    "NumOfStars": 5,
+    "ReviewType": 1
   }
 ]

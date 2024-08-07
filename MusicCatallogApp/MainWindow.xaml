@@ -15,6 +15,8 @@
         </Grid.ColumnDefinitions>
 
         <Button x:Name="btnLogIn" Content="Log in" Grid.Column="1" Margin="15,29,15,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnLogIn_Click" Height="35" Width="127" Background="#FF698474"/>
+        <Button x:Name="btnLogOut" Content="Log out" Grid.Column="1" Margin="15,29,15,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnLogOut_Click" Height="35" Width="127" Background="#FF698474" Visibility="Collapsed"/>
+
         <Button x:Name="btnRegister" Content="Sign up" Margin="15,69,15,0" VerticalAlignment="Top" Height="39" Width="127" FontWeight="Bold" Click="btnRegister_Click" Background="#FF698474" Grid.Column="1"/>
 
         <Label x:Name="lblSearch" Grid.Column="0" Content="Search music piece here:" HorizontalAlignment="Left" Margin="70,51,0,0" VerticalAlignment="Top" FontWeight="Bold"/>

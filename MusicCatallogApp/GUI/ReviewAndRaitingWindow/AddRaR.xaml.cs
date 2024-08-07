@@ -34,6 +34,7 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
             this.reviews = reviews;
             rarController = new ReviewAndRaitingController();
             mappingController = new ReviewMappingController();
+            LoadReviews();
         }
 
         private void btnAddReview_Click(object sender, RoutedEventArgs e)
@@ -55,9 +56,13 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
             {
                 reviews = reviewMapping.ReviewIds
                                         .Select(id => rarController.GetById(id))
-                                        .Where(review => review.Approved) // Filter only approved reviews
+                                        .Where(review => review.Approved) // Filtriraj samo odobrene recenzije
                                         .ToList();
                 lbReviews.ItemsSource = reviews;
+            }
+            else
+            {
+                lbReviews.ItemsSource = null;
             }
         }
 
