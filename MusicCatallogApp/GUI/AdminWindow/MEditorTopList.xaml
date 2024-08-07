@@ -1,0 +1,20 @@
+﻿<Window x:Class="MusicCatallogApp.GUI.AdminWindow.MEditorTopList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCatallogApp.GUI.AdminWindow"
+        mc:Ignorable="d"
+        Title="MEditorTopList" Height="350" Width="400">
+    <Grid Margin="10" Background="#FFDCA47C" >
+        <Label Content="Music editors with most reviews - Top list" HorizontalAlignment="Center" Margin="0,8,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <DataGrid x:Name="dgvTopList" AutoGenerateColumns="False" Margin="0,34,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Number of input content" Binding="{Binding NumOfInputContent}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

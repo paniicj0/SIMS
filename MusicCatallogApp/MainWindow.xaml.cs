@@ -11,6 +11,7 @@ using MusicCatallogApp.GUI.SignInWindow;
 using MusicCatallogApp.Layers.Controller;
 using MusicCatallogApp.Layers.Model;
 using MusicCatallogApp.Layers.Repository;
+using System.Diagnostics;
 
 namespace MusicCatallogApp
 {
@@ -58,6 +59,7 @@ namespace MusicCatallogApp
         {
             isLoggedIn = true;
             UpdateReviewButtonStatus();
+            UpdateLoginLogoutButtons();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -193,5 +195,18 @@ namespace MusicCatallogApp
             return reviews;
         }
 
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            isLoggedIn = false;
+            Process.Start(App.ResourceAssembly.Location);
+            App.Current.Shutdown();
+            UpdateLoginLogoutButtons();
+        }
+
+        private void UpdateLoginLogoutButtons()
+        {
+            btnLogIn.Visibility = isLoggedIn ? Visibility.Collapsed : Visibility.Visible;
+            btnLogOut.Visibility = isLoggedIn ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }
