@@ -122,5 +122,18 @@
     "Blocked": false,
     "UserType": "user",
     "ReviewId": []
+  },
+  {
+    "Id": 7,
+    "Name": "lena",
+    "Surname": "lenic",
+    "Email": "testic.usii@gmail.com",
+    "Password": "dd",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "user",
+    "ReviewId": []
   }
 ]
