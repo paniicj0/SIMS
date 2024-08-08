@@ -40,7 +40,7 @@
         </StackPanel>
 
 
-        <DataGrid x:Name="dgvReviews" Margin="55,10,10,68" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"/>
+        <DataGrid x:Name="dgvReviews" Margin="35,10,10,68" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"/>
 
         <Button x:Name="btnDeleteAcc" Content="Delete Account" Grid.Row="3" Grid.Column="2" Height="30" Width="120" HorizontalAlignment="Right" FontWeight="Bold" Margin="0,80,10,16" Background="#FF698474" Click="btnDeleteAcc_Click"/>
         <Label Content="*when you add everything you wanted click save" HorizontalAlignment="Left" Margin="0,32,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="10"/>

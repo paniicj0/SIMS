@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,18 +34,52 @@ namespace MusicCatallogApp.GUI.SignInWindow
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
-            String name = tbName.Text;
-            String surname = tbSurname.Text;
-            String email = tbEmail.Text;
-            String password = tbPassword.Text;
+            string name = tbName.Text;
+            string surname = tbSurname.Text;
+            string email = tbEmail.Text+"@gmail.com";
+            string password = tbPassword.Text;
 
             bool showContact = btnYes.IsChecked == true;
 
-            User user = new User(-1, name, surname, email+"@gmail.com", password, new List<object> { }, true, showContact, false, UserTypeEnum.UserType.user,new List<int> { });
+            string verificationCode = GenerateVerificationCode();
+
+            
+            // Privremeno čuvanje korisnika u memoriji dok ne potvrdi email
+            User user = new User(-1, name, surname, email , password, new List<object> { }, true, showContact, false, UserTypeEnum.UserType.user, new List<int> { });
             userController.Add(user);
+
+            SendVerificationEmail(email, verificationCode);
+            MessageBox.Show("Verification email sent. Please check your email.");
+            
 
             this.Close();
         }
 
+
+        private string GenerateVerificationCode()
+        {
+            return Guid.NewGuid().ToString();
+        }
+        //testic.usii @gmail.com", "cgoxbbyhtduliywv
+
+        private void SendVerificationEmail(string email, string verificationCode)
+        {
+            string fromEmail = "testic.usii@gmail.com"; // Zamenite sa vašim email-om
+            string fromPassword = "cgoxbbyhtduliywv"; // Zamenite sa vašom lozinkom
+
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential(fromEmail, fromPassword),
+                EnableSsl = true,
+            };
+
+            string subject = "Verify your account";
+            string body = $"Please verify your account by clicking the following link: " +
+                          $"http://yourdomain.com/verify?code={verificationCode}";
+
+            var mailMessage = new MailMessage(fromEmail, email, subject, body);
+            smtpClient.Send(mailMessage);
+        }
     }
 }
