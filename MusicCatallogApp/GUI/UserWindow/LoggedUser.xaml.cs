@@ -100,20 +100,39 @@ namespace MusicCatallogApp.GUI.UserWindow
         private void rbShow_Checked(object sender, RoutedEventArgs e)
         {
             User user = LogIn.getLoggedUser();
-            if (user != null)
+            MusicEditors musicEditor = LogIn.getLoggedEditor();
+
+            if (user != null || musicEditor != null)
             {
                 List<ReviewAndRaiting> reviews = new List<ReviewAndRaiting>();
-                foreach (int reviewId in user.ReviewId)
+
+                if (user != null)
                 {
-                    ReviewAndRaiting review = rarController.GetById(reviewId);
-                    if (review != null)
+                    foreach (int reviewId in user.ReviewId)
                     {
-                        reviews.Add(review);
+                        ReviewAndRaiting review = rarController.GetById(reviewId);
+                        if (review != null)
+                        {
+                            reviews.Add(review);
+                        }
+                    }
+                }
+
+                if (musicEditor != null)
+                {
+                    foreach (int reviewId in musicEditor.ReviewId)
+                    {
+                        ReviewAndRaiting review = rarController.GetById(reviewId);
+                        if (review != null)
+                        {
+                            reviews.Add(review);
+                        }
                     }
                 }
                 dgvReviews.ItemsSource = reviews;
             }
         }
+
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
