@@ -1,6 +1,6 @@
 [
   {
-    "NumOfInputContent": 3,
+    "NumOfInputContent": 4,
     "TasksList": [
       "daj recenziju preformeru sa id=3"
     ],
@@ -16,7 +16,8 @@
     "UserType": "musicEditor",
     "ReviewId": [
       20,
-      25
+      25,
+      26
     ]
   },
   {
@@ -57,7 +58,9 @@
   },
   {
     "NumOfInputContent": 0,
-    "TasksList": [],
+    "TasksList": [
+      "dodaj album"
+    ],
     "Id": 4,
     "Name": "ljilja",
     "Surname": "ljiljic",
