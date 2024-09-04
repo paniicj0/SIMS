@@ -34,6 +34,14 @@ namespace MusicCatallogApp.GUI.SignInWindow
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbName.Text) ||
+                string.IsNullOrWhiteSpace(tbSurname.Text) ||
+                string.IsNullOrWhiteSpace(tbEmail.Text) ||
+                string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Please enter all data.");
+                return;
+            }
             string name = tbName.Text;
             string surname = tbSurname.Text;
             string email = tbEmail.Text+"@gmail.com";
@@ -64,8 +72,8 @@ namespace MusicCatallogApp.GUI.SignInWindow
 
         private void SendVerificationEmail(string email, string verificationCode)
         {
-            string fromEmail = "testic.usii@gmail.com"; // Zamenite sa vašim email-om
-            string fromPassword = "cgoxbbyhtduliywv"; // Zamenite sa vašom lozinkom
+            string fromEmail = "testic.usii@gmail.com";
+            string fromPassword = "cgoxbbyhtduliywv"; 
 
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {

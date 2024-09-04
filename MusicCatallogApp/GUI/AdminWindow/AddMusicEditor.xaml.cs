@@ -31,7 +31,14 @@ namespace MusicCatallogApp.GUI.AdminWindow
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(tbName.Text) ||
+                string.IsNullOrWhiteSpace(tbSurname.Text) ||
+                string.IsNullOrWhiteSpace(tbEmail.Text) ||
+                string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Please enter all data.");
+                return;
+            }
             String name = tbName.Text;
             String surname = tbSurname.Text;
             String email = tbEmail.Text;

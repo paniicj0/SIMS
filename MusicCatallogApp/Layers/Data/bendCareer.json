@@ -15,5 +15,22 @@
     "Concerts": [
       "koncert1"
     ]
+  },
+  {
+    "Id": 2,
+    "Links": [
+      "link1"
+    ],
+    "Participants": [
+      "marko,pero",
+      "pero"
+    ],
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download (1).jpeg",
+    "Biography": "ovo je izmisljotina br2",
+    "BendRelease": "bananica",
+    "Concerts": [
+      "koncert1",
+      "koncert2"
+    ]
   }
 ]

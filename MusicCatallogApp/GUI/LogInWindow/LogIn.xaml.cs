@@ -70,6 +70,12 @@ namespace MusicCatallogApp.GUI.LogInWindow
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbEmail.Text) || string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Please enter email and password.");
+                return; 
+            }
+
             User user = userController.logIn(tbEmail.Text, tbPassword.Text);
             MusicEditors musicEditors = musicEditorsController.logIn(tbEmail.Text, tbPassword.Text);
 
@@ -78,7 +84,6 @@ namespace MusicCatallogApp.GUI.LogInWindow
                 loggedUser = user;
                 LoggedUser lu = new LoggedUser();
                 lu.Show();
-
                 this.Close();
             }
             else if (musicEditors != null)
@@ -95,7 +100,7 @@ namespace MusicCatallogApp.GUI.LogInWindow
 
             if (loggedUser != null || loggedMusicEditor != null)
             {
-                OnLoggedIn(EventArgs.Empty); // Raise the event if login is successful
+                OnLoggedIn(EventArgs.Empty); 
             }
 
             if (tbEmail.Text == "a" && tbPassword.Text == "a")
@@ -105,5 +110,6 @@ namespace MusicCatallogApp.GUI.LogInWindow
                 this.Close();
             }
         }
+
     }
 }

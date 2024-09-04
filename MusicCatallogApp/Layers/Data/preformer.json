@@ -31,5 +31,16 @@
     "SoloCareer": true,
     "BendCareer": true,
     "DisplayInfo": "Petar Peric arranger (Solo)"
+  },
+  {
+    "Id": 7,
+    "Name": "Luka",
+    "Surname": "Lukic",
+    "Biography": "Pa ovo je izmisljotina trenutno",
+    "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+    "Type": 2,
+    "SoloCareer": true,
+    "BendCareer": false,
+    "DisplayInfo": "Luka Lukic arranger (Solo)"
   }
 ]

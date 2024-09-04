@@ -8,41 +8,23 @@
     "Favourites": [
       {
         "$type": "MusicCatallogApp.Layers.Model.MusicalPiece, MusicCatallogApp",
-        "Id": 4,
-        "Name": "Crvenka",
-        "Text": "Ovo je jedan jako lep bend lupam gluposti",
-        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\images.jpeg",
-        "CreationDate": "2024-07-10",
+        "Id": 8,
+        "Name": "Novo delo",
+        "Text": "Ovo je novo",
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+        "CreationDate": "2024-05-20",
         "Participants": [
           {
-            "Id": 1,
-            "Name": "kjdsn",
-            "Surname": "nkjlnjk",
-            "Biography": "lnj",
-            "Picture": "C:\\Users\\Jovana\\Pictures\\Camera Roll\\WIN_20240502_22_56_04_Pro.jpg",
-            "Type": 0,
+            "Id": 5,
+            "Name": "Petar",
+            "Surname": "Peric",
+            "Biography": "Neki tupan",
+            "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+            "Type": 2,
             "SoloCareer": true,
-            "BendCareer": false,
-            "DisplayInfo": "kjdsn nkjlnjk composer (Solo)"
+            "BendCareer": true,
+            "DisplayInfo": "Petar Peric arranger (Solo)"
           }
-        ]
-      },
-      {
-        "$type": "MusicCatallogApp.Layers.Model.BendCareer, MusicCatallogApp",
-        "Id": 1,
-        "Links": [
-          "link1",
-          "link2"
-        ],
-        "Participants": [
-          "mika mikic",
-          "pera peric"
-        ],
-        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
-        "Biography": "Ovo je jedan vrlo slusan bend",
-        "BendRelease": "Letnji dan",
-        "Concerts": [
-          "koncert1"
         ]
       }
     ],
@@ -53,7 +35,9 @@
     "ReviewId": [
       15,
       17,
-      21
+      21,
+      27,
+      28
     ]
   },
   {
@@ -75,13 +59,42 @@
     "Surname": "admin",
     "Email": "a",
     "Password": "a",
-    "Favourites": [],
+    "Favourites": [
+      {
+        "$type": "MusicCatallogApp.Layers.Model.Album, MusicCatallogApp",
+        "Id": 1,
+        "Name": "Album1",
+        "AlbumType": 0
+      },
+      {
+        "$type": "MusicCatallogApp.Layers.Model.MusicalPiece, MusicCatallogApp",
+        "Id": 8,
+        "Name": "Novo delo",
+        "Text": "Ovo je novo",
+        "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+        "CreationDate": "2024-05-20",
+        "Participants": [
+          {
+            "Id": 5,
+            "Name": "Petar",
+            "Surname": "Peric",
+            "Biography": "Neki tupan",
+            "Picture": "C:\\Users\\Jovana\\Desktop\\Faks\\Semestri\\CetvrtiSemestar\\SIMS\\Aplication\\Photos\\download.jpeg",
+            "Type": 2,
+            "SoloCareer": true,
+            "BendCareer": true,
+            "DisplayInfo": "Petar Peric arranger (Solo)"
+          }
+        ]
+      }
+    ],
     "ShowReviews": true,
     "ShowConcact": true,
     "Blocked": false,
     "UserType": "user",
     "ReviewId": [
-      22
+      22,
+      29
     ]
   },
   {
@@ -93,7 +106,7 @@
     "Favourites": [],
     "ShowReviews": true,
     "ShowConcact": false,
-    "Blocked": false,
+    "Blocked": true,
     "UserType": "user",
     "ReviewId": []
   },
@@ -119,7 +132,7 @@
     "Favourites": [],
     "ShowReviews": true,
     "ShowConcact": true,
-    "Blocked": false,
+    "Blocked": true,
     "UserType": "user",
     "ReviewId": []
   },
