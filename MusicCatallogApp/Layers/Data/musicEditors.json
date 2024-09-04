@@ -72,5 +72,20 @@
     "Blocked": false,
     "UserType": "musicEditor",
     "ReviewId": []
+  },
+  {
+    "NumOfInputContent": 0,
+    "TasksList": [],
+    "Id": 5,
+    "Name": "petar",
+    "Surname": "peric",
+    "Email": "perica@gmail.com",
+    "Password": "perica",
+    "Favourites": [],
+    "ShowReviews": true,
+    "ShowConcact": true,
+    "Blocked": false,
+    "UserType": "musicEditor",
+    "ReviewId": []
   }
 ]

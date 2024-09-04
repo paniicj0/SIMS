@@ -43,6 +43,14 @@ namespace MusicCatallogApp.GUI.ReviewAndRaitingWindow
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbReview.Text) ||
+                string.IsNullOrWhiteSpace(cbNumOfStars.Text) ||
+                string.IsNullOrWhiteSpace(cbGrade.Text) ||
+                string.IsNullOrWhiteSpace(cbType.Text))
+            {
+                MessageBox.Show("Please enter all data.");
+                return;
+            }
             string review = tbReview.Text;
             int numOfStars = int.Parse(cbNumOfStars.Text);
             int grade = int.Parse(cbGrade.Text);
